@@ -16,26 +16,39 @@ def read_linked_docred(linked_docred_path: str) -> dict:
 
     return dataset
 
-
+"""
+The function return a list of documents.
+Each documents is a list of sentences
+Each sentences is a list of tokens = {name:__}
+** After Knowledge Extract, tokens should additionally have 'type' = {name:__, type:__} **
+"""
 def loading_sentences(file_path: str) -> list:
-    """
-    Description:\n
-    The function return a list of documents.
-    Each documents is a list of sentences
-    Each sentences is a list of tokens
-    """
     
     linked_docred = read_linked_docred(file_path)
 
-    doc_sent = []
-    for i in range(len(linked_docred)):
-        doc_sent.append(linked_docred[i]['sents'])
+    documents = []
+
+    for document in linked_docred:
+        sents = document['sents']
+        
+        doc_sents = []
+
+        for sent in sents:
+            tokens = []
+            for token in sent:
+                tokens.append({'name':token})
+            doc_sents.append({'entities':tokens})
+
+        documents.append({
+            'title': document.get('title', ''),
+            'sents': doc_sents
+        })
     
-    return doc_sent
+    return documents
 
 
 """
-Return the list of the documents
+Store the list of the documents with json format
 Each documents is a list of sentences
 Each list contains the ground truth entities = {name:__, type:__}
 """
@@ -142,5 +155,5 @@ def making_graph_gt(file_path: str, output_file: str):
     print(f"Graph ground truth save to {output_file}")
 
 
-making_entity_gt('dataset_Linked-DocRED/test.json', 'dataset_gt/test_NER_gt.json')
-making_graph_gt('dataset_Linked-DocRED/dev.json', 'dataset_gt/dev_GRAPH_gt.json')
+#making_entity_gt('dataset_Linked-DocRED/test.json', 'dataset_gt/test_NER_gt.json')
+#making_graph_gt('dataset_Linked-DocRED/dev.json', 'dataset_gt/dev_GRAPH_gt.json')
