@@ -2,7 +2,7 @@
 Author: francesco boldrin francesco.boldrin@studenti.unitn.it
 Date: 2024-11-13 11:19:54
 LastEditors: francesco boldrin francesco.boldrin@studenti.unitn.it
-LastEditTime: 2024-11-15 20:56:41
+LastEditTime: 2024-11-15 21:10:21
 FilePath: scripts/Evaluator.py
 Description: the file contains the functions to evaluate the algorithm developed, yet to decide how
 """
@@ -179,6 +179,81 @@ def extract_names_and_labels_from_dataset(dataset, num_documents):
 
 
 def evaluate(gt_file_path, extracted_file_path):
+    """
+        This function evaluates the performance of an entity extraction system by comparing the ground truth entities 
+        with the extracted entities. It calculates two metrics:
+
+        1. **Jaccard Distance**: A measure of similarity between the ground truth and extracted entity sets.
+        2. **Confusion Matrix**: A table to compare the predicted labels with the ground truth labels, specifically 
+           for the relevant entity types.
+
+        The function performs the following steps:
+
+        1. Loads the ground truth entities and extracted entities.
+        2. Compares each entity from the ground truth to the extracted entities based on their names and labels.
+        3. Calculates the **Jaccard Distance** between ground truth and extracted entities for each document.
+        4. Builds a **Confusion Matrix** to track the performance of the extraction system across the relevant entity 
+           labels (`MISC`, `ORG`, `PER`, `LOC`, `NUM`).
+        5. Prints out some debug information for manual inspection.
+
+        Parameters:
+        - **gt_file_path** (`str`): The file path to the JSON file containing the ground truth entity annotations. 
+          The expected format is a list of documents, each containing named entities with labels.
+
+        - **extracted_file_path** (`str`): The file path to the JSON file containing the extracted entities. 
+          Similar to the ground truth file, it should be structured to map documents to entities with labels.
+
+        Returns:
+        - **confusion_df** (`pd.DataFrame`): A Pandas DataFrame representing the confusion matrix. The rows and columns 
+          represent the ground truth and extracted labels, respectively. Each cell contains the count of instances for the 
+          corresponding pair of labels.
+
+        Functionality:
+        1. **Loading Data**:  
+           - Ground truth data is loaded using the `DataLoader.read_linked_docred(gt_file_path)` function.
+           - Extracted data is loaded using `DataLoader.read_extracted_entities_json(extracted_file_path)`.
+
+        2. **Entity Comparison**:  
+           - For each document, the entities are compared between the ground truth and the extracted entities. 
+             If the entity names and labels match, it's counted as a correct prediction. 
+             If only the entity names match but the labels differ, it's a misclassification.
+
+        3. **Jaccard Distance**:  
+           - For each document, the Jaccard score between the set of ground truth entities and the set of extracted 
+             entities is calculated. The Jaccard score is defined as:
+             \[
+             Jaccard\_score = 1 - \frac{|Intersection|}{|Union|}
+             \]
+             where `Intersection` and `Union` refer to the sets of entity names in the ground truth and extracted 
+             entities, respectively. If there are no entities in the union, the score is set to 1.0 (indicating maximum distance).
+
+        4. **Confusion Matrix**:  
+           - A confusion matrix is created to compare the ground truth labels with the extracted labels. This matrix is 
+             initialized to zeros and updated based on the comparisons of labels. The relevant labels tracked are 
+             `['MISC', 'ORG', 'PER', 'LOC', 'NUM']`.
+
+        5. **Debug Output**:  
+           - The function prints out a comparison between the ground truth and extracted entities for each document for 
+             manual verification.
+           - After the evaluation, it prints statistics such as the total number of ground truth entities and the number 
+             of failures (misclassifications).
+
+        Example Usage:
+        ```python
+        # Evaluate the performance of the entity extraction system
+        confusion_matrix_df = evaluate('./dataset_Linked-DocRED/train_annotated.json', './extracted_entities.json')
+
+        # Print out the confusion matrix
+        print(confusion_matrix_df)
+        ```
+
+        Notes:
+        - This function prints intermediate results for debugging and inspection, such as ground truth and extracted 
+          entities for each document, as well as the confusion matrix summary (total ground truth entities and failures).
+        - The current version does not compute the Jaccard Distance scores in the output but calculates them internally. 
+          You can add further analysis or store these scores as needed.
+        - The `evaluate` function assumes that the entities are structured with at least the fields `name` and `label`.
+        """
     # TODO: revise the evaluate function
     
 
@@ -188,11 +263,11 @@ def evaluate(gt_file_path, extracted_file_path):
     # 1) load groundtruth
     ner_gt = DataLoader.read_linked_docred(gt_file_path)
 
-    gt_entities = extract_names_and_labels_from_gt(ner_gt, 3)
+    gt_entities = extract_names_and_labels_from_gt(ner_gt, 10)
 
     ner_ev = DataLoader.read_extracted_entities_json(extracted_file_path)
 
-    extracted_entities = extract_names_and_labels_from_dataset(ner_ev, 3)
+    extracted_entities = extract_names_and_labels_from_dataset(ner_ev, 10)
     
     for doc in gt_entities:
         print("\n")
