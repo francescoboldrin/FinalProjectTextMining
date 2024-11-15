@@ -2,7 +2,7 @@
 Author: francesco boldrin francesco.boldrin@studenti.unitn.it
 Date: 2024-11-13 11:06:44
 LastEditors: francesco boldrin francesco.boldrin@studenti.unitn.it
-LastEditTime: 2024-11-13 11:11:38
+LastEditTime: 2024-11-15 18:25:21
 FilePath: scripts/DataLoader.py
 Description: Loading data functions in this file
 """
@@ -29,20 +29,21 @@ def loading_sentences(file_path: str) -> list:
     documents = []
 
     for document in linked_docred:
-        sents = document['sents']
-        
-        doc_sents = []
-
-        for sent in sents:
-            tokens = []
-            for token in sent:
-                tokens.append({'name':token})
-            doc_sents.append({'entities':tokens})
-
-        documents.append({
-            'title': document.get('title', ''),
-            'sents': doc_sents
-        })
+        documents.append(document['sents'])
+        # sents = document['sents']
+        # 
+        # doc_sents = []
+        # 
+        # for sent in sents:
+        #     tokens = []
+        #     for token in sent:
+        #         tokens.append({'name': token})
+        #     doc_sents.append({'entities': tokens})
+        # 
+        # documents.append({
+        #     'title': document.get('title', ''),
+        #     'sents': doc_sents
+        # })
     
     return documents
 
@@ -153,6 +154,37 @@ def making_graph_gt(file_path: str, output_file: str):
         json.dump(kg_data, f, indent=4)
 
     print(f"Graph ground truth save to {output_file}")
+    
+import json
+
+def read_extracted_entities_json(filepath: str) -> dict:
+    """
+    Reads a JSON file containing extracted entities and their metadata and returns its content as a dictionary.
+
+    :param filepath: Path to the JSON file.
+    :return: A dictionary where the keys are `doc_index` and the values are the entities dictionary for each document.
+    """
+    try:
+        # Open and load the JSON file
+        with open(filepath, 'r', encoding='utf-8') as file:
+            data = json.load(file)
+
+        # Convert the list of documents into a dictionary indexed by `doc_index`
+        extracted_entities = {}
+        for entry in data:
+            if 'doc_index' in entry and 'entities' in entry:
+                extracted_entities[entry['doc_index']] = entry['entities']
+            else:
+                raise ValueError(f"Malformed entry in JSON file: {entry}")
+
+        return extracted_entities
+
+    except FileNotFoundError:
+        raise FileNotFoundError(f"The file at {filepath} was not found.")
+    except json.JSONDecodeError:
+        raise ValueError(f"Failed to decode JSON from the file at {filepath}. Please ensure it is correctly formatted.")
+
+    
 
 
 #making_entity_gt('dataset_Linked-DocRED/test.json', 'dataset_gt/test_NER_gt.json')

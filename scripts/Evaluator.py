@@ -2,14 +2,17 @@
 Author: francesco boldrin francesco.boldrin@studenti.unitn.it
 Date: 2024-11-13 11:19:54
 LastEditors: francesco boldrin francesco.boldrin@studenti.unitn.it
-LastEditTime: 2024-11-13 11:22:21
+LastEditTime: 2024-11-15 20:56:41
 FilePath: scripts/Evaluator.py
 Description: the file contains the functions to evaluate the algorithm developed, yet to decide how
 """
+import pandas as pd
 
 import DataLoader
 import json
 from collections import defaultdict
+from sklearn.metrics import jaccard_score, confusion_matrix
+import numpy as np
 
 def ner_evaluate(gt_file_path:str, rec_file_path:str):
     
@@ -95,5 +98,202 @@ def ner_evaluate(gt_file_path:str, rec_file_path:str):
     
     return final_metrics
 
-results = ner_evaluate('dataset_gt/test_NER_gt.json', 'NER_extracted_file_example/GPT_generated_example.json')
-print(json.dumps(results, indent=4))
+# results = ner_evaluate('dataset_gt/test_NER_gt.json', 'NER_extracted_file_example/GPT_generated_example.json')
+# print(json.dumps(results, indent=4))
+
+
+def extract_names_and_labels_from_gt(dataset, num_documents):
+    """
+    Extracts the 'name' and 'type' (label) of entities from the first `num_documents` in the dataset.
+
+    :param dataset: List of documents, where each document is a dictionary with keys:
+                    'title', 'sents', 'entities', 'relations'.
+    :param num_documents: Number of documents to process (starting from the first document).
+    :return: Dictionary with document indices as keys and lists of extracted entity names and types as values.
+             Each entity is represented by a dictionary containing 'name' and 'label' (type).
+    """
+    if not isinstance(dataset, list):
+        raise ValueError("Dataset must be a list of documents.")
+    if num_documents <= 0:
+        return {}
+
+    extracted_entities = {}
+
+    for doc_index, document in enumerate(dataset[:num_documents]):
+        if 'entities' not in document:
+            raise ValueError(f"Document at index {doc_index} is missing the 'entities' key.")
+
+        entities_list = []
+
+        for entity in document['entities']:
+            # Extract relevant details for each entity (only name and type)
+            entity_details = {
+                "name": entity.get("mentions", [{}])[0].get("name", ""),  # First mention name
+                "label": entity.get("type", "")
+            }
+            entities_list.append(entity_details)
+
+        # Store extracted name and label for the current document
+        extracted_entities[doc_index] = entities_list
+
+    return extracted_entities
+
+
+def extract_names_and_labels_from_dataset(dataset, num_documents):
+    """
+    Extracts the 'name' and 'label' (type) of entities from the first `num_documents` in the dataset,
+    where each document is indexed by a number and contains a dictionary of entities.
+
+    :param dataset: Dictionary where the key is the document index, and the value is another dictionary containing
+                    entity names as keys and a list with the type and indices as values.
+    :param num_documents: Number of documents to process (starting from the first document).
+    :return: Dictionary with document indices as keys and lists of extracted entity names and types as values.
+             Each entity is represented by a dictionary containing 'name' and 'label' (type).
+    """
+    if not isinstance(dataset, dict):
+        raise ValueError("Dataset must be a dictionary of documents.")
+    if num_documents <= 0:
+        return {}
+
+    extracted_entities = {}
+
+    for doc_index in range(min(num_documents, len(dataset))):
+        document = dataset[doc_index]
+
+        # List to store the entities for the current document
+        entities_list = []
+
+        # Loop through the entities in the document
+        for entity_name, (entity_label, _) in document.items():
+            # Create a dictionary with the name and label for each entity
+            entity_details = {
+                "name": entity_name,
+                "label": entity_label
+            }
+            entities_list.append(entity_details)
+
+        # Store the extracted entity names and labels for the current document
+        extracted_entities[doc_index] = entities_list
+
+    return extracted_entities
+
+
+def evaluate(gt_file_path, extracted_file_path):
+    # TODO: revise the evaluate function
+    
+
+    # Define the relevant labels
+    relevant_labels = ['MISC', 'ORG', 'PER', 'LOC', 'NUM']
+
+    # 1) load groundtruth
+    ner_gt = DataLoader.read_linked_docred(gt_file_path)
+
+    gt_entities = extract_names_and_labels_from_gt(ner_gt, 3)
+
+    ner_ev = DataLoader.read_extracted_entities_json(extracted_file_path)
+
+    extracted_entities = extract_names_and_labels_from_dataset(ner_ev, 3)
+    
+    for doc in gt_entities:
+        print("\n")
+        for entiti in gt_entities[doc]:
+            if entiti['label'] in relevant_labels:
+                print(entiti)
+        print("\n\n--\n\n")
+        for entiti2 in extracted_entities[doc]:
+            if entiti2['label'] in relevant_labels:
+                print(entiti2)
+        print("\n\n\n--------------\n\n")
+
+    # Jaccard Distance
+    # TODO: REDO
+    jaccard_scores = {}
+    for doc_index in gt_entities:
+        if doc_index in extracted_entities:
+            gt_set = set(entity['name'] for entity in gt_entities[doc_index])
+            ev_set = set(entity['name'] for entity in extracted_entities[doc_index])
+            intersection = gt_set.intersection(ev_set)
+            union = gt_set.union(ev_set)
+            jaccard_score = 1 - (len(intersection) / len(union)) if union else 1.0
+            jaccard_scores[doc_index] = jaccard_score
+        else:
+            jaccard_scores[doc_index] = 1.0  # If no extracted entities for the document, max distance
+
+    # Confusion Matrix
+    all_labels_gt = []
+    all_labels_ev = []
+
+    # Define the labels to track
+
+    # Initialize the confusion matrix with zeros for each label pair
+    confusion_matrix = [[0. for _ in range(len(relevant_labels))] for _ in range(len(relevant_labels))]
+
+    # Create a label-to-index map for easy access
+    label_to_idx = {label: idx for idx, label in enumerate(relevant_labels)}
+    
+    counter_failure = 0
+    tot_gt_entities = 0
+    finded_ent = 0
+
+    # Now we need to compare ground truth and extracted entities
+    for doc_index in gt_entities:
+        if doc_index in extracted_entities:
+            # Loop over all ground truth entities in the document
+            for gt_entity in gt_entities[doc_index]:
+                gt_label = gt_entity['label']
+                
+
+                # 1) Check if the label is a relevant label
+                if gt_label in relevant_labels:
+                    tot_gt_entities += 1
+                    # 2) Loop over the extracted entities for this document
+                    for ex_ent in extracted_entities[doc_index]:
+                        ex_label = ex_ent['label']
+
+                        # 3) Compare the entity name and the labels TODO: make another comparison for the names
+                        if ex_ent['name'] == gt_entity['name'] and ex_label == gt_label:
+                            # Correct match: Increment the corresponding position in the confusion matrix
+                            gt_idx = label_to_idx[gt_label]
+                            ex_idx = label_to_idx[ex_label]
+                            confusion_matrix[gt_idx][ex_idx] += 1
+                            finded_ent += 1
+                            break
+                        elif ex_ent['name'] == gt_entity['name'] and ex_label != gt_label:
+                            # Incorrect match: Increment the corresponding position for mismatched labels
+                            gt_idx = label_to_idx[gt_label]
+                            ex_idx = label_to_idx[ex_label]
+                            confusion_matrix[gt_idx][ex_idx] += 1
+                            finded_ent += 1
+                            break
+                
+    counter_failure = tot_gt_entities - finded_ent
+    print("tot_gt_entities:", tot_gt_entities)
+    print("num of faiure:", counter_failure)
+    
+
+    
+    # Convert the confusion matrix to a DataFrame for better readability
+    import pandas as pd
+    confusion_df = pd.DataFrame(confusion_matrix, index=relevant_labels, columns=relevant_labels)
+
+    return confusion_df
+                            
+
+results = evaluate('./dataset_Linked-DocRED/train_annotated.json', "./extracted_entities_bert_big.json")
+    
+print(results)
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
