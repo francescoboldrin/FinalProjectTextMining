@@ -2,11 +2,13 @@
 Author: francesco boldrin francesco.boldrin@studenti.unitn.it
 Date: 2024-11-13 11:19:54
 LastEditors: francesco boldrin francesco.boldrin@studenti.unitn.it
-LastEditTime: 2024-11-15 21:10:21
+LastEditTime: 2024-11-16 14:25:02
 FilePath: scripts/Evaluator.py
 Description: the file contains the functions to evaluate the algorithm developed, yet to decide how
 """
 import pandas as pd
+from matplotlib import pyplot as plt
+import seaborn as sns
 
 import DataLoader
 import json
@@ -178,6 +180,25 @@ def extract_names_and_labels_from_dataset(dataset, num_documents):
     return extracted_entities
 
 
+def plot_confusion_matrix(confusion_df):
+    """
+    Plots a heatmap for the given confusion matrix DataFrame.
+
+    Parameters:
+    confusion_df (pd.DataFrame): The confusion matrix as a pandas DataFrame with labels as index and columns.
+    """
+    plt.figure(figsize=(10, 8))
+    sns.heatmap(confusion_df, annot=True, fmt=".2f", cmap="Blues", cbar=True, linewidths=0.5)
+    plt.title("Confusion Matrix")
+    plt.xlabel("Predicted Labels")
+    plt.ylabel("True Labels")
+    plt.xticks(rotation=45, ha='right')
+    plt.yticks(rotation=0)
+    plt.tight_layout()
+    plt.show()
+    
+
+
 def evaluate(gt_file_path, extracted_file_path):
     """
         This function evaluates the performance of an entity extraction system by comparing the ground truth entities 
@@ -258,7 +279,7 @@ def evaluate(gt_file_path, extracted_file_path):
     
 
     # Define the relevant labels
-    relevant_labels = ['MISC', 'ORG', 'PER', 'LOC', 'NUM']
+    relevant_labels = ['MISC', 'ORG', 'PER', 'LOC']
 
     # 1) load groundtruth
     ner_gt = DataLoader.read_linked_docred(gt_file_path)
@@ -294,63 +315,80 @@ def evaluate(gt_file_path, extracted_file_path):
         else:
             jaccard_scores[doc_index] = 1.0  # If no extracted entities for the document, max distance
 
-    # Confusion Matrix
-    all_labels_gt = []
-    all_labels_ev = []
-
     # Define the labels to track
 
     # Initialize the confusion matrix with zeros for each label pair
-    confusion_matrix = [[0. for _ in range(len(relevant_labels))] for _ in range(len(relevant_labels))]
+    # Assuming `relevant_labels`, `gt_entities`, and `extracted_entities` are provided as input.
+
+    # Create a confusion matrix initialized with zeros
+    confusion_matrix = [[0.0 for _ in range(len(relevant_labels))] for _ in range(len(relevant_labels))]
 
     # Create a label-to-index map for easy access
     label_to_idx = {label: idx for idx, label in enumerate(relevant_labels)}
-    
+
     counter_failure = 0
     tot_gt_entities = 0
     finded_ent = 0
 
-    # Now we need to compare ground truth and extracted entities
+    # Compare ground truth and extracted entities
     for doc_index in gt_entities:
         if doc_index in extracted_entities:
             # Loop over all ground truth entities in the document
             for gt_entity in gt_entities[doc_index]:
                 gt_label = gt_entity['label']
-                
 
                 # 1) Check if the label is a relevant label
                 if gt_label in relevant_labels:
                     tot_gt_entities += 1
-                    # 2) Loop over the extracted entities for this document
+
+                    # Flag to track if this entity was matched
+                    entity_matched = False
+
+                    # Loop over the extracted entities for this document
                     for ex_ent in extracted_entities[doc_index]:
                         ex_label = ex_ent['label']
 
-                        # 3) Compare the entity name and the labels TODO: make another comparison for the names
-                        if ex_ent['name'] == gt_entity['name'] and ex_label == gt_label:
-                            # Correct match: Increment the corresponding position in the confusion matrix
+                        # 3) Compare the entity name and the labels
+                        if ex_ent['name'] == gt_entity['name']:  # Match by name
                             gt_idx = label_to_idx[gt_label]
                             ex_idx = label_to_idx[ex_label]
+
+                            # Increment the corresponding position in the confusion matrix
                             confusion_matrix[gt_idx][ex_idx] += 1
                             finded_ent += 1
+                            entity_matched = True
                             break
-                        elif ex_ent['name'] == gt_entity['name'] and ex_label != gt_label:
-                            # Incorrect match: Increment the corresponding position for mismatched labels
-                            gt_idx = label_to_idx[gt_label]
-                            ex_idx = label_to_idx[ex_label]
-                            confusion_matrix[gt_idx][ex_idx] += 1
-                            finded_ent += 1
-                            break
-                
-    counter_failure = tot_gt_entities - finded_ent
-    print("tot_gt_entities:", tot_gt_entities)
-    print("num of faiure:", counter_failure)
+
+                    # If no match was found, count it as a failure
+                    if not entity_matched:
+                        counter_failure += 1
+                        
+    confusion_matrix_normalized = confusion_matrix
+
+    # Normalize the confusion matrix to values between 0 and 1
+    # Normalization is done row-wise, dividing by the total entities for that ground truth label
+    for i, row in enumerate(confusion_matrix):
+        row_sum = sum(row)
+        if row_sum > 0:  # To avoid division by zero
+            confusion_matrix[i] = [value / row_sum for value in row]
+
+    # Output results for verification
+    print("Confusion Matrix (Normalized):")
+    for row in confusion_matrix:
+        print(row)
+
+    print(f"Total Ground Truth Entities: {tot_gt_entities}")
+    print(f"Total Found Entities: {finded_ent}")
+    print(f"Total Failures: {counter_failure}")   
     
 
     
     # Convert the confusion matrix to a DataFrame for better readability
-    import pandas as pd
+    
     confusion_df = pd.DataFrame(confusion_matrix, index=relevant_labels, columns=relevant_labels)
-
+    
+    plot_confusion_matrix(confusion_df)
+    
     return confusion_df
                             
 
