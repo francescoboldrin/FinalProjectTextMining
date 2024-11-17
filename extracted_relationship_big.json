@@ -1,0 +1,1329 @@
+[
+    {
+        "doc_index": 0,
+        "relationships": {
+            "rel_0": {
+                "entity1": "AirAsia",
+                "entity2": "Zest Air",
+                "relationship": "Related_to",
+                "sentence_index": 6
+            },
+            "rel_1": {
+                "entity1": "AirAsia",
+                "entity2": "AirAsia Zest",
+                "relationship": "Related_to",
+                "sentence_index": 6
+            },
+            "rel_2": {
+                "entity1": "Zest Air",
+                "entity2": "AirAsia Zest",
+                "relationship": "Related_to",
+                "sentence_index": 6
+            },
+            "rel_3": {
+                "entity1": "Civil Aviation Authority of the Philippines",
+                "entity2": "Philippines",
+                "relationship": "Related_to",
+                "sentence_index": 5
+            },
+            "rel_4": {
+                "entity1": "Civil Aviation Authority of the Philippines",
+                "entity2": "Zest Air",
+                "relationship": "Related_to",
+                "sentence_index": 5
+            },
+            "rel_5": {
+                "entity1": "CAAP",
+                "entity2": "Government of the",
+                "relationship": "Related_to",
+                "sentence_index": 5
+            },
+            "rel_6": {
+                "entity1": "CAAP",
+                "entity2": "Republic of the",
+                "relationship": "Related_to",
+                "sentence_index": 5
+            },
+            "rel_7": {
+                "entity1": "CAAP",
+                "entity2": "Philippines",
+                "relationship": "Related_to",
+                "sentence_index": 5
+            },
+            "rel_8": {
+                "entity1": "CAAP",
+                "entity2": "Zest Air",
+                "relationship": "Related_to",
+                "sentence_index": 5
+            },
+            "rel_9": {
+                "entity1": "Government of the",
+                "entity2": "Republic of the",
+                "relationship": "Related_to",
+                "sentence_index": 5
+            },
+            "rel_10": {
+                "entity1": "Government of the",
+                "entity2": "Philippines",
+                "relationship": "Related_to",
+                "sentence_index": 5
+            },
+            "rel_11": {
+                "entity1": "Government of the",
+                "entity2": "Zest Air",
+                "relationship": "Related_to",
+                "sentence_index": 5
+            },
+            "rel_12": {
+                "entity1": "Republic of the",
+                "entity2": "Philippines",
+                "relationship": "Related_to",
+                "sentence_index": 5
+            },
+            "rel_13": {
+                "entity1": "Republic of the",
+                "entity2": "Zest Air",
+                "relationship": "Related_to",
+                "sentence_index": 5
+            },
+            "rel_14": {
+                "entity1": "Philippines",
+                "entity2": "Zest Air",
+                "relationship": "Related_to",
+                "sentence_index": 5
+            },
+            "rel_15": {
+                "entity1": "Asian Spirit",
+                "entity2": "Pasay City",
+                "relationship": "Related_to",
+                "sentence_index": 0
+            },
+            "rel_16": {
+                "entity1": "Asian Spirit",
+                "entity2": "Metro Manila",
+                "relationship": "Related_to",
+                "sentence_index": 0
+            },
+            "rel_17": {
+                "entity1": "Asian Spirit",
+                "entity2": "Philippines",
+                "relationship": "Related_to",
+                "sentence_index": 0
+            },
+            "rel_18": {
+                "entity1": "Zest Air",
+                "entity2": "Ninoy Aquino International Airport",
+                "relationship": "Related_to",
+                "sentence_index": 0
+            },
+            "rel_19": {
+                "entity1": "Zest Air",
+                "entity2": "Pasay City",
+                "relationship": "Related_to",
+                "sentence_index": 0
+            },
+            "rel_20": {
+                "entity1": "Zest Air",
+                "entity2": "Metro Manila",
+                "relationship": "Related_to",
+                "sentence_index": 0
+            },
+            "rel_21": {
+                "entity1": "Zest Air",
+                "entity2": "Philippines",
+                "relationship": "Related_to",
+                "sentence_index": 0
+            },
+            "rel_22": {
+                "entity1": "Ninoy Aquino International Airport",
+                "entity2": "Pasay City",
+                "relationship": "Related_to",
+                "sentence_index": 0
+            },
+            "rel_23": {
+                "entity1": "Ninoy Aquino International Airport",
+                "entity2": "Metro Manila",
+                "relationship": "Related_to",
+                "sentence_index": 0
+            },
+            "rel_24": {
+                "entity1": "Ninoy Aquino International Airport",
+                "entity2": "Philippines",
+                "relationship": "Related_to",
+                "sentence_index": 0
+            },
+            "rel_25": {
+                "entity1": "Pasay City",
+                "entity2": "Metro Manila",
+                "relationship": "Related_to",
+                "sentence_index": 0
+            },
+            "rel_26": {
+                "entity1": "Pasay City",
+                "entity2": "Philippines",
+                "relationship": "Related_to",
+                "sentence_index": 0
+            },
+            "rel_27": {
+                "entity1": "Metro Manila",
+                "entity2": "Philippines",
+                "relationship": "Related_to",
+                "sentence_index": 0
+            }
+        }
+    },
+    {
+        "doc_index": 1,
+        "relationships": {
+            "rel_0": {
+                "entity1": "Black Sea",
+                "entity2": "Gulf of Mexico",
+                "relationship": "Related_to",
+                "sentence_index": 4
+            },
+            "rel_1": {
+                "entity1": "Black Sea",
+                "entity2": "Red Sea",
+                "relationship": "Related_to",
+                "sentence_index": 4
+            },
+            "rel_2": {
+                "entity1": "Gulf of Mexico",
+                "entity2": "Red Sea",
+                "relationship": "Related_to",
+                "sentence_index": 4
+            }
+        }
+    },
+    {
+        "doc_index": 2,
+        "relationships": {
+            "rel_0": {
+                "entity1": "Tracks of Sweden",
+                "entity2": "Simon Johansson",
+                "relationship": "Related_to",
+                "sentence_index": 6
+            },
+            "rel_1": {
+                "entity1": "Ballerina",
+                "entity2": "Kee Marcello",
+                "relationship": "Related_to",
+                "sentence_index": 2
+            },
+            "rel_2": {
+                "entity1": "Europe",
+                "entity2": "Kee Marcello",
+                "relationship": "Related_to",
+                "sentence_index": 2
+            }
+        }
+    },
+    {
+        "doc_index": 3,
+        "relationships": {
+            "rel_0": {
+                "entity1": "Pacific Fair",
+                "entity2": "Little Tall",
+                "relationship": "Related_to",
+                "sentence_index": 10
+            },
+            "rel_1": {
+                "entity1": "Pacific Fair",
+                "entity2": "##eb",
+                "relationship": "Related_to",
+                "sentence_index": 10
+            },
+            "rel_2": {
+                "entity1": "Pacific Fair",
+                "entity2": "##udgera Creek",
+                "relationship": "Related_to",
+                "sentence_index": 10
+            },
+            "rel_3": {
+                "entity1": "Pacific Fair",
+                "entity2": "Surfers Riverwalk",
+                "relationship": "Related_to",
+                "sentence_index": 10
+            },
+            "rel_4": {
+                "entity1": "Little Tall",
+                "entity2": "##eb",
+                "relationship": "Related_to",
+                "sentence_index": 10
+            },
+            "rel_5": {
+                "entity1": "Little Tall",
+                "entity2": "##udgera Creek",
+                "relationship": "Related_to",
+                "sentence_index": 10
+            },
+            "rel_6": {
+                "entity1": "Little Tall",
+                "entity2": "Surfers Riverwalk",
+                "relationship": "Related_to",
+                "sentence_index": 10
+            },
+            "rel_7": {
+                "entity1": "##eb",
+                "entity2": "##udgera Creek",
+                "relationship": "Related_to",
+                "sentence_index": 10
+            },
+            "rel_8": {
+                "entity1": "##eb",
+                "entity2": "Surfers Riverwalk",
+                "relationship": "Related_to",
+                "sentence_index": 10
+            },
+            "rel_9": {
+                "entity1": "##udgera Creek",
+                "entity2": "Surfers Riverwalk",
+                "relationship": "Related_to",
+                "sentence_index": 10
+            }
+        }
+    },
+    {
+        "doc_index": 4,
+        "relationships": {
+            "rel_0": {
+                "entity1": "Allied",
+                "entity2": "Europe",
+                "relationship": "Related_to",
+                "sentence_index": 7
+            },
+            "rel_1": {
+                "entity1": "Allied",
+                "entity2": "Ministry",
+                "relationship": "Related_to",
+                "sentence_index": 7
+            },
+            "rel_2": {
+                "entity1": "Europe",
+                "entity2": "Ministry",
+                "relationship": "Related_to",
+                "sentence_index": 7
+            }
+        }
+    },
+    {
+        "doc_index": 5,
+        "relationships": {
+            "rel_0": {
+                "entity1": "Northam",
+                "entity2": "York",
+                "relationship": "Related_to",
+                "sentence_index": 7
+            },
+            "rel_1": {
+                "entity1": "BGC",
+                "entity2": "Perth",
+                "relationship": "Related_to",
+                "sentence_index": 6
+            },
+            "rel_2": {
+                "entity1": "BGC",
+                "entity2": "Perth Airport",
+                "relationship": "Related_to",
+                "sentence_index": 6
+            },
+            "rel_3": {
+                "entity1": "Great Eastern Highway",
+                "entity2": "Perth",
+                "relationship": "Related_to",
+                "sentence_index": 6
+            },
+            "rel_4": {
+                "entity1": "Great Eastern Highway",
+                "entity2": "Perth Airport",
+                "relationship": "Related_to",
+                "sentence_index": 6
+            },
+            "rel_5": {
+                "entity1": "Perth",
+                "entity2": "Perth Airport",
+                "relationship": "Related_to",
+                "sentence_index": 6
+            },
+            "rel_6": {
+                "entity1": "Perth",
+                "entity2": "Region",
+                "relationship": "Related_to",
+                "sentence_index": 1
+            },
+            "rel_7": {
+                "entity1": "Perth",
+                "entity2": "Scheme",
+                "relationship": "Related_to",
+                "sentence_index": 1
+            },
+            "rel_8": {
+                "entity1": "Great",
+                "entity2": "Eastern",
+                "relationship": "Related_to",
+                "sentence_index": 1
+            },
+            "rel_9": {
+                "entity1": "Great",
+                "entity2": "Highway",
+                "relationship": "Related_to",
+                "sentence_index": 1
+            },
+            "rel_10": {
+                "entity1": "Great",
+                "entity2": "Great",
+                "relationship": "Related_to",
+                "sentence_index": 1
+            },
+            "rel_11": {
+                "entity1": "Great",
+                "entity2": "Southern Highway",
+                "relationship": "Related_to",
+                "sentence_index": 1
+            },
+            "rel_12": {
+                "entity1": "Great",
+                "entity2": "Metropolitan",
+                "relationship": "Related_to",
+                "sentence_index": 1
+            },
+            "rel_13": {
+                "entity1": "Great",
+                "entity2": "Region",
+                "relationship": "Related_to",
+                "sentence_index": 1
+            },
+            "rel_14": {
+                "entity1": "Great",
+                "entity2": "Scheme",
+                "relationship": "Related_to",
+                "sentence_index": 1
+            },
+            "rel_15": {
+                "entity1": "Eastern",
+                "entity2": "Highway",
+                "relationship": "Related_to",
+                "sentence_index": 1
+            },
+            "rel_16": {
+                "entity1": "Eastern",
+                "entity2": "Great",
+                "relationship": "Related_to",
+                "sentence_index": 1
+            },
+            "rel_17": {
+                "entity1": "Eastern",
+                "entity2": "Southern Highway",
+                "relationship": "Related_to",
+                "sentence_index": 1
+            },
+            "rel_18": {
+                "entity1": "Eastern",
+                "entity2": "Metropolitan",
+                "relationship": "Related_to",
+                "sentence_index": 1
+            },
+            "rel_19": {
+                "entity1": "Eastern",
+                "entity2": "Region",
+                "relationship": "Related_to",
+                "sentence_index": 1
+            },
+            "rel_20": {
+                "entity1": "Eastern",
+                "entity2": "Scheme",
+                "relationship": "Related_to",
+                "sentence_index": 1
+            },
+            "rel_21": {
+                "entity1": "Highway",
+                "entity2": "Great",
+                "relationship": "Related_to",
+                "sentence_index": 1
+            },
+            "rel_22": {
+                "entity1": "Highway",
+                "entity2": "Southern Highway",
+                "relationship": "Related_to",
+                "sentence_index": 1
+            },
+            "rel_23": {
+                "entity1": "Highway",
+                "entity2": "Metropolitan",
+                "relationship": "Related_to",
+                "sentence_index": 1
+            },
+            "rel_24": {
+                "entity1": "Highway",
+                "entity2": "Region",
+                "relationship": "Related_to",
+                "sentence_index": 1
+            },
+            "rel_25": {
+                "entity1": "Highway",
+                "entity2": "Scheme",
+                "relationship": "Related_to",
+                "sentence_index": 1
+            },
+            "rel_26": {
+                "entity1": "Great",
+                "entity2": "Southern Highway",
+                "relationship": "Related_to",
+                "sentence_index": 1
+            },
+            "rel_27": {
+                "entity1": "Great",
+                "entity2": "Metropolitan",
+                "relationship": "Related_to",
+                "sentence_index": 1
+            },
+            "rel_28": {
+                "entity1": "Great",
+                "entity2": "Region",
+                "relationship": "Related_to",
+                "sentence_index": 1
+            },
+            "rel_29": {
+                "entity1": "Great",
+                "entity2": "Scheme",
+                "relationship": "Related_to",
+                "sentence_index": 1
+            },
+            "rel_30": {
+                "entity1": "Southern Highway",
+                "entity2": "Metropolitan",
+                "relationship": "Related_to",
+                "sentence_index": 1
+            },
+            "rel_31": {
+                "entity1": "Southern Highway",
+                "entity2": "Region",
+                "relationship": "Related_to",
+                "sentence_index": 1
+            },
+            "rel_32": {
+                "entity1": "Southern Highway",
+                "entity2": "Scheme",
+                "relationship": "Related_to",
+                "sentence_index": 1
+            },
+            "rel_33": {
+                "entity1": "Metropolitan",
+                "entity2": "Region",
+                "relationship": "Related_to",
+                "sentence_index": 1
+            },
+            "rel_34": {
+                "entity1": "Metropolitan",
+                "entity2": "Scheme",
+                "relationship": "Related_to",
+                "sentence_index": 1
+            },
+            "rel_35": {
+                "entity1": "Region",
+                "entity2": "Scheme",
+                "relationship": "Related_to",
+                "sentence_index": 1
+            }
+        }
+    },
+    {
+        "doc_index": 6,
+        "relationships": {
+            "rel_0": {
+                "entity1": "Alton",
+                "entity2": "Civil War",
+                "relationship": "Related_to",
+                "sentence_index": 5
+            },
+            "rel_1": {
+                "entity1": "Alton",
+                "entity2": "Confederate",
+                "relationship": "Related_to",
+                "sentence_index": 5
+            },
+            "rel_2": {
+                "entity1": "Civil War",
+                "entity2": "Confederate",
+                "relationship": "Related_to",
+                "sentence_index": 5
+            },
+            "rel_3": {
+                "entity1": "Alton",
+                "entity2": "United States",
+                "relationship": "Related_to",
+                "sentence_index": 0
+            },
+            "rel_4": {
+                "entity1": "Alton",
+                "entity2": "St. Louis",
+                "relationship": "Related_to",
+                "sentence_index": 0
+            },
+            "rel_5": {
+                "entity1": "Alton",
+                "entity2": "Missouri",
+                "relationship": "Related_to",
+                "sentence_index": 0
+            },
+            "rel_6": {
+                "entity1": "Mississippi River",
+                "entity2": "Madison County",
+                "relationship": "Related_to",
+                "sentence_index": 0
+            },
+            "rel_7": {
+                "entity1": "Mississippi River",
+                "entity2": "Illinois",
+                "relationship": "Related_to",
+                "sentence_index": 0
+            },
+            "rel_8": {
+                "entity1": "Mississippi River",
+                "entity2": "United States",
+                "relationship": "Related_to",
+                "sentence_index": 0
+            },
+            "rel_9": {
+                "entity1": "Mississippi River",
+                "entity2": "St. Louis",
+                "relationship": "Related_to",
+                "sentence_index": 0
+            },
+            "rel_10": {
+                "entity1": "Mississippi River",
+                "entity2": "Missouri",
+                "relationship": "Related_to",
+                "sentence_index": 0
+            },
+            "rel_11": {
+                "entity1": "Madison County",
+                "entity2": "Illinois",
+                "relationship": "Related_to",
+                "sentence_index": 0
+            },
+            "rel_12": {
+                "entity1": "Madison County",
+                "entity2": "United States",
+                "relationship": "Related_to",
+                "sentence_index": 0
+            },
+            "rel_13": {
+                "entity1": "Madison County",
+                "entity2": "St. Louis",
+                "relationship": "Related_to",
+                "sentence_index": 0
+            },
+            "rel_14": {
+                "entity1": "Madison County",
+                "entity2": "Missouri",
+                "relationship": "Related_to",
+                "sentence_index": 0
+            },
+            "rel_15": {
+                "entity1": "Illinois",
+                "entity2": "United States",
+                "relationship": "Related_to",
+                "sentence_index": 0
+            },
+            "rel_16": {
+                "entity1": "Illinois",
+                "entity2": "St. Louis",
+                "relationship": "Related_to",
+                "sentence_index": 0
+            },
+            "rel_17": {
+                "entity1": "Illinois",
+                "entity2": "Missouri",
+                "relationship": "Related_to",
+                "sentence_index": 0
+            },
+            "rel_18": {
+                "entity1": "United States",
+                "entity2": "St. Louis",
+                "relationship": "Related_to",
+                "sentence_index": 0
+            },
+            "rel_19": {
+                "entity1": "United States",
+                "entity2": "Missouri",
+                "relationship": "Related_to",
+                "sentence_index": 0
+            },
+            "rel_20": {
+                "entity1": "St. Louis",
+                "entity2": "Missouri",
+                "relationship": "Related_to",
+                "sentence_index": 0
+            }
+        }
+    },
+    {
+        "doc_index": 7,
+        "relationships": {
+            "rel_0": {
+                "entity1": "Us",
+                "entity2": "Them",
+                "relationship": "Related_to",
+                "sentence_index": 4
+            },
+            "rel_1": {
+                "entity1": "Us",
+                "entity2": "Godflesh",
+                "relationship": "Related_to",
+                "sentence_index": 3
+            },
+            "rel_2": {
+                "entity1": "Us",
+                "entity2": "Justin Broadrick",
+                "relationship": "Related_to",
+                "sentence_index": 3
+            },
+            "rel_3": {
+                "entity1": "Them",
+                "entity2": "Godflesh",
+                "relationship": "Related_to",
+                "sentence_index": 3
+            },
+            "rel_4": {
+                "entity1": "Them",
+                "entity2": "Justin Broadrick",
+                "relationship": "Related_to",
+                "sentence_index": 3
+            },
+            "rel_5": {
+                "entity1": "Godflesh",
+                "entity2": "Justin Broadrick",
+                "relationship": "Related_to",
+                "sentence_index": 3
+            }
+        }
+    },
+    {
+        "doc_index": 8,
+        "relationships": {
+            "rel_0": {
+                "entity1": "Douglas Lake Cattle Company",
+                "entity2": "Douglas Lake Ranch",
+                "relationship": "Related_to",
+                "sentence_index": 4
+            },
+            "rel_1": {
+                "entity1": "1",
+                "entity2": "Indian Band",
+                "relationship": "Related_to",
+                "sentence_index": 3
+            },
+            "rel_2": {
+                "entity1": "Upper Nicola",
+                "entity2": "Indian Band",
+                "relationship": "Related_to",
+                "sentence_index": 3
+            },
+            "rel_3": {
+                "entity1": "Nicola",
+                "entity2": "British Columbia",
+                "relationship": "Related_to",
+                "sentence_index": 0
+            },
+            "rel_4": {
+                "entity1": "Nicola",
+                "entity2": "Canada",
+                "relationship": "Related_to",
+                "sentence_index": 0
+            },
+            "rel_5": {
+                "entity1": "Nicola",
+                "entity2": "Merritt",
+                "relationship": "Related_to",
+                "sentence_index": 0
+            },
+            "rel_6": {
+                "entity1": "Lake",
+                "entity2": "South",
+                "relationship": "Related_to",
+                "sentence_index": 0
+            },
+            "rel_7": {
+                "entity1": "Lake",
+                "entity2": "Central Interior",
+                "relationship": "Related_to",
+                "sentence_index": 0
+            },
+            "rel_8": {
+                "entity1": "Lake",
+                "entity2": "British Columbia",
+                "relationship": "Related_to",
+                "sentence_index": 0
+            },
+            "rel_9": {
+                "entity1": "Lake",
+                "entity2": "Canada",
+                "relationship": "Related_to",
+                "sentence_index": 0
+            },
+            "rel_10": {
+                "entity1": "Lake",
+                "entity2": "Merritt",
+                "relationship": "Related_to",
+                "sentence_index": 0
+            },
+            "rel_11": {
+                "entity1": "South",
+                "entity2": "Central Interior",
+                "relationship": "Related_to",
+                "sentence_index": 0
+            },
+            "rel_12": {
+                "entity1": "South",
+                "entity2": "British Columbia",
+                "relationship": "Related_to",
+                "sentence_index": 0
+            },
+            "rel_13": {
+                "entity1": "South",
+                "entity2": "Canada",
+                "relationship": "Related_to",
+                "sentence_index": 0
+            },
+            "rel_14": {
+                "entity1": "South",
+                "entity2": "Merritt",
+                "relationship": "Related_to",
+                "sentence_index": 0
+            },
+            "rel_15": {
+                "entity1": "Central Interior",
+                "entity2": "British Columbia",
+                "relationship": "Related_to",
+                "sentence_index": 0
+            },
+            "rel_16": {
+                "entity1": "Central Interior",
+                "entity2": "Canada",
+                "relationship": "Related_to",
+                "sentence_index": 0
+            },
+            "rel_17": {
+                "entity1": "Central Interior",
+                "entity2": "Merritt",
+                "relationship": "Related_to",
+                "sentence_index": 0
+            },
+            "rel_18": {
+                "entity1": "British Columbia",
+                "entity2": "Canada",
+                "relationship": "Related_to",
+                "sentence_index": 0
+            },
+            "rel_19": {
+                "entity1": "British Columbia",
+                "entity2": "Merritt",
+                "relationship": "Related_to",
+                "sentence_index": 0
+            },
+            "rel_20": {
+                "entity1": "Canada",
+                "entity2": "Merritt",
+                "relationship": "Related_to",
+                "sentence_index": 0
+            }
+        }
+    },
+    {
+        "doc_index": 9,
+        "relationships": {
+            "rel_0": {
+                "entity1": "Geirnaert",
+                "entity2": "Nevene",
+                "relationship": "Related_to",
+                "sentence_index": 7
+            },
+            "rel_1": {
+                "entity1": "Geirnaert",
+                "entity2": "##ct",
+                "relationship": "Related_to",
+                "sentence_index": 7
+            },
+            "rel_2": {
+                "entity1": "Geirnaert",
+                "entity2": "##en",
+                "relationship": "Related_to",
+                "sentence_index": 7
+            },
+            "rel_3": {
+                "entity1": "Geirnaert",
+                "entity2": "Canvas",
+                "relationship": "Related_to",
+                "sentence_index": 7
+            },
+            "rel_4": {
+                "entity1": "Geirnaert",
+                "entity2": "Flemish",
+                "relationship": "Related_to",
+                "sentence_index": 7
+            },
+            "rel_5": {
+                "entity1": "Geirnaert",
+                "entity2": "Lieven Scheire",
+                "relationship": "Related_to",
+                "sentence_index": 7
+            },
+            "rel_6": {
+                "entity1": "Geirnaert",
+                "entity2": "Koen De Poorter",
+                "relationship": "Related_to",
+                "sentence_index": 7
+            },
+            "rel_7": {
+                "entity1": "Geirnaert",
+                "entity2": "Jelle De Beule",
+                "relationship": "Related_to",
+                "sentence_index": 7
+            },
+            "rel_8": {
+                "entity1": "Nevene",
+                "entity2": "##ct",
+                "relationship": "Related_to",
+                "sentence_index": 7
+            },
+            "rel_9": {
+                "entity1": "Nevene",
+                "entity2": "##en",
+                "relationship": "Related_to",
+                "sentence_index": 7
+            },
+            "rel_10": {
+                "entity1": "Nevene",
+                "entity2": "Canvas",
+                "relationship": "Related_to",
+                "sentence_index": 7
+            },
+            "rel_11": {
+                "entity1": "Nevene",
+                "entity2": "Flemish",
+                "relationship": "Related_to",
+                "sentence_index": 7
+            },
+            "rel_12": {
+                "entity1": "Nevene",
+                "entity2": "Lieven Scheire",
+                "relationship": "Related_to",
+                "sentence_index": 7
+            },
+            "rel_13": {
+                "entity1": "Nevene",
+                "entity2": "Koen De Poorter",
+                "relationship": "Related_to",
+                "sentence_index": 7
+            },
+            "rel_14": {
+                "entity1": "Nevene",
+                "entity2": "Jelle De Beule",
+                "relationship": "Related_to",
+                "sentence_index": 7
+            },
+            "rel_15": {
+                "entity1": "##ct",
+                "entity2": "##en",
+                "relationship": "Related_to",
+                "sentence_index": 7
+            },
+            "rel_16": {
+                "entity1": "##ct",
+                "entity2": "Canvas",
+                "relationship": "Related_to",
+                "sentence_index": 7
+            },
+            "rel_17": {
+                "entity1": "##ct",
+                "entity2": "Flemish",
+                "relationship": "Related_to",
+                "sentence_index": 7
+            },
+            "rel_18": {
+                "entity1": "##ct",
+                "entity2": "Lieven Scheire",
+                "relationship": "Related_to",
+                "sentence_index": 7
+            },
+            "rel_19": {
+                "entity1": "##ct",
+                "entity2": "Koen De Poorter",
+                "relationship": "Related_to",
+                "sentence_index": 7
+            },
+            "rel_20": {
+                "entity1": "##ct",
+                "entity2": "Jelle De Beule",
+                "relationship": "Related_to",
+                "sentence_index": 7
+            },
+            "rel_21": {
+                "entity1": "##en",
+                "entity2": "Canvas",
+                "relationship": "Related_to",
+                "sentence_index": 7
+            },
+            "rel_22": {
+                "entity1": "##en",
+                "entity2": "Flemish",
+                "relationship": "Related_to",
+                "sentence_index": 7
+            },
+            "rel_23": {
+                "entity1": "##en",
+                "entity2": "Lieven Scheire",
+                "relationship": "Related_to",
+                "sentence_index": 7
+            },
+            "rel_24": {
+                "entity1": "##en",
+                "entity2": "Koen De Poorter",
+                "relationship": "Related_to",
+                "sentence_index": 7
+            },
+            "rel_25": {
+                "entity1": "##en",
+                "entity2": "Jelle De Beule",
+                "relationship": "Related_to",
+                "sentence_index": 7
+            },
+            "rel_26": {
+                "entity1": "Canvas",
+                "entity2": "Flemish",
+                "relationship": "Related_to",
+                "sentence_index": 7
+            },
+            "rel_27": {
+                "entity1": "Canvas",
+                "entity2": "Lieven Scheire",
+                "relationship": "Related_to",
+                "sentence_index": 7
+            },
+            "rel_28": {
+                "entity1": "Canvas",
+                "entity2": "Koen De Poorter",
+                "relationship": "Related_to",
+                "sentence_index": 7
+            },
+            "rel_29": {
+                "entity1": "Canvas",
+                "entity2": "Jelle De Beule",
+                "relationship": "Related_to",
+                "sentence_index": 7
+            },
+            "rel_30": {
+                "entity1": "Flemish",
+                "entity2": "Lieven Scheire",
+                "relationship": "Related_to",
+                "sentence_index": 7
+            },
+            "rel_31": {
+                "entity1": "Flemish",
+                "entity2": "Koen De Poorter",
+                "relationship": "Related_to",
+                "sentence_index": 7
+            },
+            "rel_32": {
+                "entity1": "Flemish",
+                "entity2": "Jelle De Beule",
+                "relationship": "Related_to",
+                "sentence_index": 7
+            },
+            "rel_33": {
+                "entity1": "Lieven Scheire",
+                "entity2": "Koen De Poorter",
+                "relationship": "Related_to",
+                "sentence_index": 7
+            },
+            "rel_34": {
+                "entity1": "Lieven Scheire",
+                "entity2": "Jelle De Beule",
+                "relationship": "Related_to",
+                "sentence_index": 7
+            },
+            "rel_35": {
+                "entity1": "Koen De Poorter",
+                "entity2": "Jelle De Beule",
+                "relationship": "Related_to",
+                "sentence_index": 7
+            }
+        }
+    },
+    {
+        "doc_index": 10,
+        "relationships": {
+            "rel_0": {
+                "entity1": "Reformed Dutch",
+                "entity2": "Church of Second River",
+                "relationship": "Related_to",
+                "sentence_index": 8
+            },
+            "rel_1": {
+                "entity1": "Belleville",
+                "entity2": "Newark",
+                "relationship": "Related_to",
+                "sentence_index": 5
+            },
+            "rel_2": {
+                "entity1": "Belleville",
+                "entity2": "Newark",
+                "relationship": "Related_to",
+                "sentence_index": 5
+            },
+            "rel_3": {
+                "entity1": "Toney",
+                "entity2": "' s",
+                "relationship": "Related_to",
+                "sentence_index": 3
+            },
+            "rel_4": {
+                "entity1": "Toney",
+                "entity2": "Brook",
+                "relationship": "Related_to",
+                "sentence_index": 3
+            },
+            "rel_5": {
+                "entity1": "' s",
+                "entity2": "Brook",
+                "relationship": "Related_to",
+                "sentence_index": 3
+            },
+            "rel_6": {
+                "entity1": "West Orange",
+                "entity2": "##shu",
+                "relationship": "Related_to",
+                "sentence_index": 2
+            },
+            "rel_7": {
+                "entity1": "West Orange",
+                "entity2": "##ane Brooks",
+                "relationship": "Related_to",
+                "sentence_index": 2
+            },
+            "rel_8": {
+                "entity1": "West Orange",
+                "entity2": "Bloomfield",
+                "relationship": "Related_to",
+                "sentence_index": 2
+            },
+            "rel_9": {
+                "entity1": "Second River",
+                "entity2": "Orange",
+                "relationship": "Related_to",
+                "sentence_index": 2
+            },
+            "rel_10": {
+                "entity1": "Second River",
+                "entity2": "East Orange",
+                "relationship": "Related_to",
+                "sentence_index": 2
+            },
+            "rel_11": {
+                "entity1": "Second River",
+                "entity2": "Wigwam",
+                "relationship": "Related_to",
+                "sentence_index": 2
+            },
+            "rel_12": {
+                "entity1": "Second River",
+                "entity2": "Parrow",
+                "relationship": "Related_to",
+                "sentence_index": 2
+            },
+            "rel_13": {
+                "entity1": "Second River",
+                "entity2": "Ni",
+                "relationship": "Related_to",
+                "sentence_index": 2
+            },
+            "rel_14": {
+                "entity1": "Second River",
+                "entity2": "##shu",
+                "relationship": "Related_to",
+                "sentence_index": 2
+            },
+            "rel_15": {
+                "entity1": "Second River",
+                "entity2": "##ane Brooks",
+                "relationship": "Related_to",
+                "sentence_index": 2
+            },
+            "rel_16": {
+                "entity1": "Second River",
+                "entity2": "Bloomfield",
+                "relationship": "Related_to",
+                "sentence_index": 2
+            },
+            "rel_17": {
+                "entity1": "Orange",
+                "entity2": "East Orange",
+                "relationship": "Related_to",
+                "sentence_index": 2
+            },
+            "rel_18": {
+                "entity1": "Orange",
+                "entity2": "Wigwam",
+                "relationship": "Related_to",
+                "sentence_index": 2
+            },
+            "rel_19": {
+                "entity1": "Orange",
+                "entity2": "Parrow",
+                "relationship": "Related_to",
+                "sentence_index": 2
+            },
+            "rel_20": {
+                "entity1": "Orange",
+                "entity2": "Ni",
+                "relationship": "Related_to",
+                "sentence_index": 2
+            },
+            "rel_21": {
+                "entity1": "Orange",
+                "entity2": "##shu",
+                "relationship": "Related_to",
+                "sentence_index": 2
+            },
+            "rel_22": {
+                "entity1": "Orange",
+                "entity2": "##ane Brooks",
+                "relationship": "Related_to",
+                "sentence_index": 2
+            },
+            "rel_23": {
+                "entity1": "Orange",
+                "entity2": "Bloomfield",
+                "relationship": "Related_to",
+                "sentence_index": 2
+            },
+            "rel_24": {
+                "entity1": "East Orange",
+                "entity2": "Wigwam",
+                "relationship": "Related_to",
+                "sentence_index": 2
+            },
+            "rel_25": {
+                "entity1": "East Orange",
+                "entity2": "Parrow",
+                "relationship": "Related_to",
+                "sentence_index": 2
+            },
+            "rel_26": {
+                "entity1": "East Orange",
+                "entity2": "Ni",
+                "relationship": "Related_to",
+                "sentence_index": 2
+            },
+            "rel_27": {
+                "entity1": "East Orange",
+                "entity2": "##shu",
+                "relationship": "Related_to",
+                "sentence_index": 2
+            },
+            "rel_28": {
+                "entity1": "East Orange",
+                "entity2": "##ane Brooks",
+                "relationship": "Related_to",
+                "sentence_index": 2
+            },
+            "rel_29": {
+                "entity1": "East Orange",
+                "entity2": "Bloomfield",
+                "relationship": "Related_to",
+                "sentence_index": 2
+            },
+            "rel_30": {
+                "entity1": "Wigwam",
+                "entity2": "Parrow",
+                "relationship": "Related_to",
+                "sentence_index": 2
+            },
+            "rel_31": {
+                "entity1": "Wigwam",
+                "entity2": "Ni",
+                "relationship": "Related_to",
+                "sentence_index": 2
+            },
+            "rel_32": {
+                "entity1": "Wigwam",
+                "entity2": "##shu",
+                "relationship": "Related_to",
+                "sentence_index": 2
+            },
+            "rel_33": {
+                "entity1": "Wigwam",
+                "entity2": "##ane Brooks",
+                "relationship": "Related_to",
+                "sentence_index": 2
+            },
+            "rel_34": {
+                "entity1": "Wigwam",
+                "entity2": "Bloomfield",
+                "relationship": "Related_to",
+                "sentence_index": 2
+            },
+            "rel_35": {
+                "entity1": "Parrow",
+                "entity2": "Ni",
+                "relationship": "Related_to",
+                "sentence_index": 2
+            },
+            "rel_36": {
+                "entity1": "Parrow",
+                "entity2": "##shu",
+                "relationship": "Related_to",
+                "sentence_index": 2
+            },
+            "rel_37": {
+                "entity1": "Parrow",
+                "entity2": "##ane Brooks",
+                "relationship": "Related_to",
+                "sentence_index": 2
+            },
+            "rel_38": {
+                "entity1": "Parrow",
+                "entity2": "Bloomfield",
+                "relationship": "Related_to",
+                "sentence_index": 2
+            },
+            "rel_39": {
+                "entity1": "Ni",
+                "entity2": "##shu",
+                "relationship": "Related_to",
+                "sentence_index": 2
+            },
+            "rel_40": {
+                "entity1": "Ni",
+                "entity2": "##ane Brooks",
+                "relationship": "Related_to",
+                "sentence_index": 2
+            },
+            "rel_41": {
+                "entity1": "Ni",
+                "entity2": "Bloomfield",
+                "relationship": "Related_to",
+                "sentence_index": 2
+            },
+            "rel_42": {
+                "entity1": "##shu",
+                "entity2": "##ane Brooks",
+                "relationship": "Related_to",
+                "sentence_index": 2
+            },
+            "rel_43": {
+                "entity1": "##shu",
+                "entity2": "Bloomfield",
+                "relationship": "Related_to",
+                "sentence_index": 2
+            },
+            "rel_44": {
+                "entity1": "##ane Brooks",
+                "entity2": "Bloomfield",
+                "relationship": "Related_to",
+                "sentence_index": 2
+            }
+        }
+    }
+]
