@@ -262,6 +262,31 @@ def extract_knowledge(doc_index, document, tagger):
         
     # Store extracted entities in the JSON file
     store_entities_per_document(doc_index, global_entities_dict)
+
+    # Step 2: Relation extraction
+    for index, sentence in enumerate(document):
+        sentence_text = " ".join(sentence) 
+        flair_sentence = Sentence(sentence_text)
+
+        tagger.predict(flair_sentence)
+        local_entities = flair_sentence.get_spans("ner")
+
+        if len(local_entities) > 1:
+            for i, entity1 in enumerate(local_entities):
+                for j, entity2 in enumerate(local_entities):
+                    if i >= j:
+                        continue  
+                    
+                    relationship_label = f"Related_to"  
+                    relationships[f"rel_{id_relationships}"] = [
+                        entity1.text.strip(),  
+                        entity2.text.strip(),  
+                        relationship_label,  
+                        index  
+                    ]
+                    id_relationships += 1
+
+    store_relationships_per_document(doc_index, relationships)
     
     if DEBUG:
         print(f"Document {doc_index} processed.")
