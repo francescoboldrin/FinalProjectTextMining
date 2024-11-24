@@ -1325,5 +1325,578 @@
                 "sentence_index": 2
             }
         }
+    },
+    {
+        "doc_index": 0,
+        "relationships": [
+            {
+                "subject": "Zest Airways, Inc",
+                "predicate": "operated",
+                "object": "AirAsia Zest",
+                "sentence_index": 0
+            },
+            {
+                "subject": "Zest Airways, Inc",
+                "predicate": "based",
+                "object": "AirAsia Zest",
+                "sentence_index": 0
+            },
+            {
+                "subject": "Zest Airways, Inc",
+                "predicate": "operated",
+                "object": "Asian Spirit",
+                "sentence_index": 0
+            },
+            {
+                "subject": "Zest Airways, Inc",
+                "predicate": "based",
+                "object": "Asian Spirit",
+                "sentence_index": 0
+            },
+            {
+                "subject": "Zest Airways, Inc",
+                "predicate": "operated",
+                "object": "Zest Air",
+                "sentence_index": 0
+            },
+            {
+                "subject": "Zest Airways, Inc",
+                "predicate": "based",
+                "object": "Zest Air",
+                "sentence_index": 0
+            },
+            {
+                "subject": "Zest Airways, Inc",
+                "predicate": "operated",
+                "object": "Ninoy Aquino International Airport",
+                "sentence_index": 0
+            },
+            {
+                "subject": "Zest Airways, Inc",
+                "predicate": "based",
+                "object": "Ninoy Aquino International Airport",
+                "sentence_index": 0
+            },
+            {
+                "subject": "Zest Airways, Inc",
+                "predicate": "operated",
+                "object": "Pasay City",
+                "sentence_index": 0
+            },
+            {
+                "subject": "Zest Airways, Inc",
+                "predicate": "based",
+                "object": "Pasay City",
+                "sentence_index": 0
+            },
+            {
+                "subject": "Zest Airways, Inc",
+                "predicate": "operated",
+                "object": "Metro Manila",
+                "sentence_index": 0
+            },
+            {
+                "subject": "Zest Airways, Inc",
+                "predicate": "based",
+                "object": "Metro Manila",
+                "sentence_index": 0
+            },
+            {
+                "subject": "Zest Airways, Inc",
+                "predicate": "operated",
+                "object": "Philippines",
+                "sentence_index": 0
+            },
+            {
+                "subject": "Zest Airways, Inc",
+                "predicate": "based",
+                "object": "Philippines",
+                "sentence_index": 0
+            },
+            {
+                "subject": "AirAsia Zest",
+                "predicate": "operated",
+                "object": "Asian Spirit",
+                "sentence_index": 0
+            },
+            {
+                "subject": "AirAsia Zest",
+                "predicate": "based",
+                "object": "Asian Spirit",
+                "sentence_index": 0
+            },
+            {
+                "subject": "AirAsia Zest",
+                "predicate": "operated",
+                "object": "Zest Air",
+                "sentence_index": 0
+            },
+            {
+                "subject": "AirAsia Zest",
+                "predicate": "based",
+                "object": "Zest Air",
+                "sentence_index": 0
+            },
+            {
+                "subject": "AirAsia Zest",
+                "predicate": "operated",
+                "object": "Ninoy Aquino International Airport",
+                "sentence_index": 0
+            },
+            {
+                "subject": "AirAsia Zest",
+                "predicate": "based",
+                "object": "Ninoy Aquino International Airport",
+                "sentence_index": 0
+            },
+            {
+                "subject": "AirAsia Zest",
+                "predicate": "operated",
+                "object": "Pasay City",
+                "sentence_index": 0
+            },
+            {
+                "subject": "AirAsia Zest",
+                "predicate": "based",
+                "object": "Pasay City",
+                "sentence_index": 0
+            },
+            {
+                "subject": "AirAsia Zest",
+                "predicate": "operated",
+                "object": "Metro Manila",
+                "sentence_index": 0
+            },
+            {
+                "subject": "AirAsia Zest",
+                "predicate": "based",
+                "object": "Metro Manila",
+                "sentence_index": 0
+            },
+            {
+                "subject": "AirAsia Zest",
+                "predicate": "operated",
+                "object": "Philippines",
+                "sentence_index": 0
+            },
+            {
+                "subject": "AirAsia Zest",
+                "predicate": "based",
+                "object": "Philippines",
+                "sentence_index": 0
+            },
+            {
+                "subject": "Asian Spirit",
+                "predicate": "operated",
+                "object": "Zest Air",
+                "sentence_index": 0
+            },
+            {
+                "subject": "Asian Spirit",
+                "predicate": "based",
+                "object": "Zest Air",
+                "sentence_index": 0
+            },
+            {
+                "subject": "Asian Spirit",
+                "predicate": "operated",
+                "object": "Ninoy Aquino International Airport",
+                "sentence_index": 0
+            },
+            {
+                "subject": "Asian Spirit",
+                "predicate": "based",
+                "object": "Ninoy Aquino International Airport",
+                "sentence_index": 0
+            },
+            {
+                "subject": "Asian Spirit",
+                "predicate": "operated",
+                "object": "Pasay City",
+                "sentence_index": 0
+            },
+            {
+                "subject": "Asian Spirit",
+                "predicate": "based",
+                "object": "Pasay City",
+                "sentence_index": 0
+            },
+            {
+                "subject": "Asian Spirit",
+                "predicate": "operated",
+                "object": "Metro Manila",
+                "sentence_index": 0
+            },
+            {
+                "subject": "Asian Spirit",
+                "predicate": "based",
+                "object": "Metro Manila",
+                "sentence_index": 0
+            },
+            {
+                "subject": "Asian Spirit",
+                "predicate": "operated",
+                "object": "Philippines",
+                "sentence_index": 0
+            },
+            {
+                "subject": "Asian Spirit",
+                "predicate": "based",
+                "object": "Philippines",
+                "sentence_index": 0
+            },
+            {
+                "subject": "Zest Air",
+                "predicate": "operated",
+                "object": "Ninoy Aquino International Airport",
+                "sentence_index": 0
+            },
+            {
+                "subject": "Zest Air",
+                "predicate": "based",
+                "object": "Ninoy Aquino International Airport",
+                "sentence_index": 0
+            },
+            {
+                "subject": "Zest Air",
+                "predicate": "operated",
+                "object": "Pasay City",
+                "sentence_index": 0
+            },
+            {
+                "subject": "Zest Air",
+                "predicate": "based",
+                "object": "Pasay City",
+                "sentence_index": 0
+            },
+            {
+                "subject": "Zest Air",
+                "predicate": "operated",
+                "object": "Metro Manila",
+                "sentence_index": 0
+            },
+            {
+                "subject": "Zest Air",
+                "predicate": "based",
+                "object": "Metro Manila",
+                "sentence_index": 0
+            },
+            {
+                "subject": "Zest Air",
+                "predicate": "operated",
+                "object": "Philippines",
+                "sentence_index": 0
+            },
+            {
+                "subject": "Zest Air",
+                "predicate": "based",
+                "object": "Philippines",
+                "sentence_index": 0
+            },
+            {
+                "subject": "Ninoy Aquino International Airport",
+                "predicate": "operated",
+                "object": "Pasay City",
+                "sentence_index": 0
+            },
+            {
+                "subject": "Ninoy Aquino International Airport",
+                "predicate": "based",
+                "object": "Pasay City",
+                "sentence_index": 0
+            },
+            {
+                "subject": "Ninoy Aquino International Airport",
+                "predicate": "operated",
+                "object": "Metro Manila",
+                "sentence_index": 0
+            },
+            {
+                "subject": "Ninoy Aquino International Airport",
+                "predicate": "based",
+                "object": "Metro Manila",
+                "sentence_index": 0
+            },
+            {
+                "subject": "Ninoy Aquino International Airport",
+                "predicate": "operated",
+                "object": "Philippines",
+                "sentence_index": 0
+            },
+            {
+                "subject": "Ninoy Aquino International Airport",
+                "predicate": "based",
+                "object": "Philippines",
+                "sentence_index": 0
+            },
+            {
+                "subject": "Pasay City",
+                "predicate": "operated",
+                "object": "Metro Manila",
+                "sentence_index": 0
+            },
+            {
+                "subject": "Pasay City",
+                "predicate": "based",
+                "object": "Metro Manila",
+                "sentence_index": 0
+            },
+            {
+                "subject": "Pasay City",
+                "predicate": "operated",
+                "object": "Philippines",
+                "sentence_index": 0
+            },
+            {
+                "subject": "Pasay City",
+                "predicate": "based",
+                "object": "Philippines",
+                "sentence_index": 0
+            },
+            {
+                "subject": "Metro Manila",
+                "predicate": "operated",
+                "object": "Philippines",
+                "sentence_index": 0
+            },
+            {
+                "subject": "Metro Manila",
+                "predicate": "based",
+                "object": "Philippines",
+                "sentence_index": 0
+            },
+            {
+                "subject": "Manila",
+                "predicate": "operated",
+                "object": "Cebu",
+                "sentence_index": 1
+            },
+            {
+                "subject": "Manila",
+                "predicate": "scheduled",
+                "object": "Cebu",
+                "sentence_index": 1
+            },
+            {
+                "subject": "Manila",
+                "predicate": "linking",
+                "object": "Cebu",
+                "sentence_index": 1
+            },
+            {
+                "subject": "Asian Spirit",
+                "predicate": "founded",
+                "object": "Philippines",
+                "sentence_index": 4
+            },
+            {
+                "subject": "Asian Spirit",
+                "predicate": "run",
+                "object": "Philippines",
+                "sentence_index": 4
+            },
+            {
+                "subject": "Civil Aviation Authority of the Philippines",
+                "predicate": "regulating",
+                "object": "CAAP",
+                "sentence_index": 5
+            },
+            {
+                "subject": "Civil Aviation Authority of the Philippines",
+                "predicate": "suspended",
+                "object": "CAAP",
+                "sentence_index": 5
+            },
+            {
+                "subject": "Civil Aviation Authority of the Philippines",
+                "predicate": "regulating",
+                "object": "Government of the",
+                "sentence_index": 5
+            },
+            {
+                "subject": "Civil Aviation Authority of the Philippines",
+                "predicate": "suspended",
+                "object": "Government of the",
+                "sentence_index": 5
+            },
+            {
+                "subject": "Civil Aviation Authority of the Philippines",
+                "predicate": "regulating",
+                "object": "Republic of the",
+                "sentence_index": 5
+            },
+            {
+                "subject": "Civil Aviation Authority of the Philippines",
+                "predicate": "suspended",
+                "object": "Republic of the",
+                "sentence_index": 5
+            },
+            {
+                "subject": "Civil Aviation Authority of the Philippines",
+                "predicate": "regulating",
+                "object": "Philippines",
+                "sentence_index": 5
+            },
+            {
+                "subject": "Civil Aviation Authority of the Philippines",
+                "predicate": "suspended",
+                "object": "Philippines",
+                "sentence_index": 5
+            },
+            {
+                "subject": "Civil Aviation Authority of the Philippines",
+                "predicate": "regulating",
+                "object": "Zest Air",
+                "sentence_index": 5
+            },
+            {
+                "subject": "Civil Aviation Authority of the Philippines",
+                "predicate": "suspended",
+                "object": "Zest Air",
+                "sentence_index": 5
+            },
+            {
+                "subject": "CAAP",
+                "predicate": "regulating",
+                "object": "Government of the",
+                "sentence_index": 5
+            },
+            {
+                "subject": "CAAP",
+                "predicate": "suspended",
+                "object": "Government of the",
+                "sentence_index": 5
+            },
+            {
+                "subject": "CAAP",
+                "predicate": "regulating",
+                "object": "Republic of the",
+                "sentence_index": 5
+            },
+            {
+                "subject": "CAAP",
+                "predicate": "suspended",
+                "object": "Republic of the",
+                "sentence_index": 5
+            },
+            {
+                "subject": "CAAP",
+                "predicate": "regulating",
+                "object": "Philippines",
+                "sentence_index": 5
+            },
+            {
+                "subject": "CAAP",
+                "predicate": "suspended",
+                "object": "Philippines",
+                "sentence_index": 5
+            },
+            {
+                "subject": "CAAP",
+                "predicate": "regulating",
+                "object": "Zest Air",
+                "sentence_index": 5
+            },
+            {
+                "subject": "CAAP",
+                "predicate": "suspended",
+                "object": "Zest Air",
+                "sentence_index": 5
+            },
+            {
+                "subject": "Government of the",
+                "predicate": "regulating",
+                "object": "Republic of the",
+                "sentence_index": 5
+            },
+            {
+                "subject": "Government of the",
+                "predicate": "suspended",
+                "object": "Republic of the",
+                "sentence_index": 5
+            },
+            {
+                "subject": "Government of the",
+                "predicate": "regulating",
+                "object": "Philippines",
+                "sentence_index": 5
+            },
+            {
+                "subject": "Government of the",
+                "predicate": "suspended",
+                "object": "Philippines",
+                "sentence_index": 5
+            },
+            {
+                "subject": "Government of the",
+                "predicate": "regulating",
+                "object": "Zest Air",
+                "sentence_index": 5
+            },
+            {
+                "subject": "Government of the",
+                "predicate": "suspended",
+                "object": "Zest Air",
+                "sentence_index": 5
+            },
+            {
+                "subject": "Republic of the",
+                "predicate": "regulating",
+                "object": "Philippines",
+                "sentence_index": 5
+            },
+            {
+                "subject": "Republic of the",
+                "predicate": "suspended",
+                "object": "Philippines",
+                "sentence_index": 5
+            },
+            {
+                "subject": "Republic of the",
+                "predicate": "regulating",
+                "object": "Zest Air",
+                "sentence_index": 5
+            },
+            {
+                "subject": "Republic of the",
+                "predicate": "suspended",
+                "object": "Zest Air",
+                "sentence_index": 5
+            },
+            {
+                "subject": "Philippines",
+                "predicate": "regulating",
+                "object": "Zest Air",
+                "sentence_index": 5
+            },
+            {
+                "subject": "Philippines",
+                "predicate": "suspended",
+                "object": "Zest Air",
+                "sentence_index": 5
+            },
+            {
+                "subject": "AirAsia",
+                "predicate": "rebranded",
+                "object": "Zest Air",
+                "sentence_index": 6
+            },
+            {
+                "subject": "AirAsia",
+                "predicate": "rebranded",
+                "object": "AirAsia Zest",
+                "sentence_index": 6
+            },
+            {
+                "subject": "Zest Air",
+                "predicate": "rebranded",
+                "object": "AirAsia Zest",
+                "sentence_index": 6
+            }
+        ]
+    },
+    {
+        "doc_index": 0,
+        "relationships": []
     }
 ]
