@@ -1,0 +1,127 @@
+import torch
+from torch.utils.data import DataLoader, TensorDataset
+from sklearn.metrics import accuracy_score
+from transformers import BertTokenizer, BertForSequenceClassification, AdamW, get_scheduler
+from tqdm import tqdm
+
+from datasets import load_dataset
+
+
+def load_semeval_data_from_hf():
+    """
+    Load the SemEval 2010 Task 8 dataset from the Hugging Face dataset library.
+    :return: train_sentences, train_labels, test_sentences, test_labels
+    """
+    dataset = load_dataset("sem_eval_2010_task_8")
+
+    train_data = dataset['train']
+    test_data = dataset['test']
+
+    train_sentences = [item['sentence'] for item in train_data]
+    train_labels = [item['relation'] for item in train_data]
+
+    test_sentences = [item['sentence'] for item in test_data]
+    test_labels = [item['relation'] for item in test_data]
+
+    return train_sentences, train_labels, test_sentences, test_labels
+
+
+train_sentences, train_labels, test_sentences, test_labels = load_semeval_data_from_hf()
+
+# Map labels to IDs and IDs to labels
+label_to_id = {label: i for i, label in enumerate(set(train_labels))}
+id_to_label = {v: k for k, v in label_to_id.items()}
+
+train_labels = [label_to_id[label] for label in train_labels]
+test_labels = [label_to_id[label] for label in test_labels]
+
+# Initialize the tokenizer
+tokenizer = BertTokenizer.from_pretrained("gyr66/relation_extraction_bert_base_uncased")
+
+def preprocess_data(sentences, labels, tokenizer, max_length=128):
+    """
+    Preprocess input sentences and labels for BERT input.
+    :param sentences: List of sentences
+    :param labels: Corresponding labels
+    :param tokenizer: BERT tokenizer
+    :param max_length: Maximum sequence length
+    :return: Tokenized inputs with labels
+    """
+    inputs = tokenizer(sentences, padding=True, truncation=True, max_length=max_length, return_tensors="pt")
+    inputs["labels"] = torch.tensor(labels)
+    return inputs
+
+# Convert the data
+train_data = preprocess_data(train_sentences, train_labels, tokenizer)
+test_data = preprocess_data(test_sentences, test_labels, tokenizer)
+
+# Step 4: Create data loaders
+train_dataset = TensorDataset(train_data["input_ids"], train_data["attention_mask"], train_data["labels"])
+test_dataset = TensorDataset(test_data["input_ids"], test_data["attention_mask"], test_data["labels"])
+train_loader = DataLoader(train_dataset, batch_size=16, shuffle=True)
+test_loader = DataLoader(test_dataset, batch_size=16)
+
+# Step 5: Initialize the model
+num_labels = len(label_to_id)
+model_for_relationship = BertForSequenceClassification.from_pretrained(
+    "gyr66/relation_extraction_bert_base_uncased", 
+    num_labels=num_labels, 
+    ignore_mismatched_sizes=True
+)
+
+# Step 6: Set up optimizer and learning rate scheduler
+optimizer = AdamW(model_for_relationship.parameters(), lr=5e-5)
+num_training_steps = len(train_loader) * 3  # Assuming 3 epochs of training
+lr_scheduler = get_scheduler("linear", optimizer=optimizer, num_warmup_steps=0, num_training_steps=num_training_steps)
+
+# Training device
+device = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
+model_for_relationship.to(device)  # Ensure the model is on the correct device
+
+# Step 7: Train the model
+def train_model(model_for_relationship, train_loader, optimizer, lr_scheduler, num_epochs=3):
+    """
+    Train the BERT model for sequence classification.
+    :param model_for_relationship: The model to train
+    :param train_loader: DataLoader for training data
+    :param optimizer: Optimizer for training
+    :param lr_scheduler: Learning rate scheduler
+    :param num_epochs: Number of epochs
+    """
+    model_for_relationship.train()
+    for epoch in range(num_epochs):
+        loop = tqdm(train_loader, leave=True)
+        for batch in loop:
+            batch_input_ids, batch_attention_mask, batch_labels = [item.to(device) for item in batch]
+            outputs = model_for_relationship(
+                input_ids=batch_input_ids, attention_mask=batch_attention_mask, labels=batch_labels
+            )
+            loss = outputs.loss
+            loss.backward()
+            optimizer.step()
+            lr_scheduler.step()
+            optimizer.zero_grad()
+
+            loop.set_description(f"Epoch {epoch}")
+            loop.set_postfix(loss=loss.item())
+
+def evaluate_model(model_for_relationship, test_loader):
+    """
+    Evaluate the BERT model on test data.
+    :param model_for_relationship: The trained model
+    :param test_loader: DataLoader for test data
+    """
+    model_for_relationship.eval()
+    preds, labels = [], []
+    with torch.no_grad():
+        for batch in test_loader:
+            batch_input_ids, batch_attention_mask, batch_labels = [item.to(device) for item in batch]
+            outputs = model_for_relationship(input_ids=batch_input_ids, attention_mask=batch_attention_mask)
+            logits = outputs.logits
+            preds.extend(torch.argmax(logits, dim=-1).tolist())
+            labels.extend(batch_labels.tolist())
+    accuracy = accuracy_score(labels, preds)
+    print(f"Accuracy: {accuracy:.4f}")
+
+train_model(model_for_relationship, train_loader, optimizer, lr_scheduler, num_epochs=3)
+evaluate_model(model_for_relationship, test_loader)
