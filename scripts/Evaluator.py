@@ -2,7 +2,7 @@
 Author: francesco boldrin francesco.boldrin@studenti.unitn.it
 Date: 2024-11-13 11:19:54
 LastEditors: francesco boldrin francesco.boldrin@studenti.unitn.it
-LastEditTime: 2024-11-24 18:29:16
+LastEditTime: 2024-11-24 19:31:59
 FilePath: scripts/Evaluator.py
 Description: the file contains the functions to evaluate the algorithm developed, yet to decide how
 """
@@ -15,6 +15,14 @@ import json
 from collections import defaultdict
 from sklearn.metrics import jaccard_score, confusion_matrix
 import numpy as np
+
+from transformers import BertTokenizer, BertModel
+import torch
+import torch.nn.functional as F
+
+# Load the pre-trained BERT model and tokenizer
+tokenizer = BertTokenizer.from_pretrained("bert-base-uncased")
+model = BertModel.from_pretrained("bert-base-uncased")
 
 def ner_evaluate(gt_file_path:str, rec_file_path:str):
     
@@ -399,9 +407,146 @@ def evaluate(gt_file_path, extracted_file_path):
     return confusion_df
                             
 
-results = evaluate('./dataset_Linked-DocRED/train_annotated.json', "./extracted_entities_bert_small.json")
+# results = evaluate('./dataset_Linked-DocRED/train_annotated.json', "./extracted_entities_bert_small.json")
+#     
+# print(results)
+
+def parse_relations_ex(ex, num_of_documents):
+    """
+    from: 0: [{'head': 'AirAsia Zest', 'type': 'airline hub', 'tail': 'Ninoy Aquino International Airport'}, {'head': 'AirAsia Zest', 'type': 'headquarters location', 'tail': 'Pasay City'}, {'head': 'AirAsia Zest', 'type': 'country', 'tail': 'Philippines'},
+    to: 
+        (head, type, tail)
+    """
+    relations_ev = []
     
-print(results)
+    for i in range(num_of_documents):
+        document = ex[i]
+        for relation in document:
+            head = relation['head']
+            tail = relation['tail']
+            relations_ev.append((head, relation['type'], tail))
+            
+    return relations_ev
+
+def parse_relations_gt(gt, num_of_documents):
+    # retrieve the relationships from the ground truth in the first `num_of_documents`
+    relations_gt = []
+    
+    for i in range(num_of_documents):
+        document = gt[i]
+        for relation in document['relations']:
+            head = relation['h']
+            tail = relation['t']
+            
+            # the number in h and t is the index of the entity in the entities list
+            # the relation is the relation between the two entities
+            # find the actual entities in the entities list
+            head_entity = document['entities'][head]
+            tail_entity = document['entities'][tail]
+            
+            #find pnly the first mention of the entity
+            head_entity = head_entity['mentions'][0]['name']
+            tail_entity = tail_entity['mentions'][0]['name']
+            
+            relations_gt.append((head_entity, relation['r'], tail_entity))
+            
+    
+    return relations_gt
+
+
+def distance(param, param1):
+    # TODO: THIS IS NOT FINISHED I?LL WORK ON IT tonight
+    """
+    Calculate the semantic distance between two strings using BERT embeddings.
+
+    Parameters:
+    - param (str): First string.
+    - param1 (str): Second string.
+
+    Returns:
+    - float: The cosine similarity between the embeddings of the two strings.
+    """
+    print("Calculating distance between:", param, "and", param1)
+    
+    # Tokenize the strings and convert them to input IDs, ensuring batch processing
+    inputs = tokenizer(param, param1, return_tensors='pt', padding=True, truncation=True)
+
+    # Get the BERT embeddings (last hidden state)
+    with torch.no_grad():
+        outputs = model(**inputs)
+        # Extract embeddings for the [CLS] token (index 0 for both sentences)
+        embeddings = outputs.last_hidden_state[:, 0, :]  # Shape: (batch_size, hidden_size)
+
+        # Ensure there are two embeddings (for two sentences)
+        if embeddings.shape[0] < 2:
+            raise ValueError("Expected embeddings for two sentences, but only got one.")
+
+        # embeddings[0] is for the first sentence (param)
+        # embeddings[1] is for the second sentence (param1)
+        embedding_param = embeddings[0]  # Embedding for the first string
+        embedding_param1 = embeddings[1]  # Embedding for the second string
+
+    # Compute cosine similarity between the two embeddings
+    cosine_sim = F.cosine_similarity(embedding_param.unsqueeze(0), embedding_param1.unsqueeze(0))
+
+    # Return cosine similarity as distance (1 - cosine similarity gives a measure of dissimilarity)
+    return 1 - cosine_sim.item()
+
+
+def evaluate_relationship_extraction(file_path_gt, file_path_ev): # file path to the ground truth and the extracted file
+    gt = DataLoader.read_linked_docred(file_path_gt)
+    ex = DataLoader.read_extracted_relations_json(file_path_ev)
+    
+    rel_exs = parse_relations_ex(ex, 10)
+    
+    
+    
+    rel_gts = parse_relations_gt(gt, 10)
+    
+    
+    found_relations = []
+    gt_not_found = []
+    ex_not_found = []
+    
+    for rel_gt in rel_gts:
+        found = False
+        for rel_ex in rel_exs:
+            if rel_gt [0] == rel_ex[0] and rel_gt[2] == rel_ex[2]:
+                found = True
+                found_relations.append(rel_gt)
+                break
+        
+        if not found:
+            gt_not_found.append(rel_gt)
+            
+    for rel_ex in rel_exs:
+        found = False
+        for rel_gt in rel_gts:
+            if distance(rel_gt[0], rel_ex[0])<0.5 and distance(rel_gt[2], rel_ex[2])<0.5:
+                found = True
+                break
+        
+        if not found:
+            ex_not_found.append(rel_ex)
+            
+    print("Found relations:")
+    print(found_relations)
+    
+    print("Ground truth relations not found:")
+    print(gt_not_found)
+    
+    print("Extracted relations not found:")
+    print(ex_not_found)
+    
+    # percentage of found relations
+    precision = len(found_relations) / len(rel_gts)
+    
+    print("Precision: ", precision)
+    
+    # print(relations_gt)
+    # print(relations_ev)
+    
+evaluate_relationship_extraction('dataset_Linked-DocRED/train_annotated.json', 'extracted_relationship_big_with_rebel.json')
     
     
     
