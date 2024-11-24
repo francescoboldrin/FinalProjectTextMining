@@ -2,7 +2,7 @@
 Author: francesco boldrin francesco.boldrin@studenti.unitn.it
 Date: 2024-11-13 11:19:54
 LastEditors: francesco boldrin francesco.boldrin@studenti.unitn.it
-LastEditTime: 2024-11-16 14:25:02
+LastEditTime: 2024-11-24 18:29:16
 FilePath: scripts/Evaluator.py
 Description: the file contains the functions to evaluate the algorithm developed, yet to decide how
 """
@@ -291,29 +291,16 @@ def evaluate(gt_file_path, extracted_file_path):
     extracted_entities = extract_names_and_labels_from_dataset(ner_ev, 10)
     
     for doc in gt_entities:
-        print("\n")
+        print("\nGROUNDTRUTH ENTITIES:")
         for entiti in gt_entities[doc]:
             if entiti['label'] in relevant_labels:
                 print(entiti)
-        print("\n\n--\n\n")
+        print("\n--\n")
+        print("RETRIEVED ENTITIES:")
         for entiti2 in extracted_entities[doc]:
             if entiti2['label'] in relevant_labels:
                 print(entiti2)
         print("\n\n\n--------------\n\n")
-
-    # Jaccard Distance
-    # TODO: REDO
-    jaccard_scores = {}
-    for doc_index in gt_entities:
-        if doc_index in extracted_entities:
-            gt_set = set(entity['name'] for entity in gt_entities[doc_index])
-            ev_set = set(entity['name'] for entity in extracted_entities[doc_index])
-            intersection = gt_set.intersection(ev_set)
-            union = gt_set.union(ev_set)
-            jaccard_score = 1 - (len(intersection) / len(union)) if union else 1.0
-            jaccard_scores[doc_index] = jaccard_score
-        else:
-            jaccard_scores[doc_index] = 1.0  # If no extracted entities for the document, max distance
 
     # Define the labels to track
 
@@ -364,6 +351,18 @@ def evaluate(gt_file_path, extracted_file_path):
                         counter_failure += 1
                         
     confusion_matrix_normalized = confusion_matrix
+    
+    # find F1 score
+    f1_score = 0
+    for i in range(len(confusion_matrix)):
+        tp = confusion_matrix[i][i]
+        fp = sum([confusion_matrix[j][i] for j in range(len(confusion_matrix))]) - tp
+        fn = sum(confusion_matrix[i]) - tp
+        precision = tp / (tp + fp) if tp + fp > 0 else 0
+        recall = tp / (tp + fn) if tp + fn > 0 else 0
+        f1_score += 2 * (precision * recall) / (precision + recall) if precision + recall > 0 else 0
+    
+    f1_score /= len(confusion_matrix)
 
     # Normalize the confusion matrix to values between 0 and 1
     # Normalization is done row-wise, dividing by the total entities for that ground truth label
@@ -377,12 +376,20 @@ def evaluate(gt_file_path, extracted_file_path):
     for row in confusion_matrix:
         print(row)
 
-    print(f"Total Ground Truth Entities: {tot_gt_entities}")
-    print(f"Total Found Entities: {finded_ent}")
-    print(f"Total Failures: {counter_failure}")   
-    
+    total_ground_truth_entities = tot_gt_entities  # Total entities in ground truth
+    total_found_entities = finded_ent  # Total entities correctly identified
+    total_failures = counter_failure  # Total entities missed
 
-    
+    # Calculate success percentage
+    success_percentage = (total_found_entities / total_ground_truth_entities) * 100 if total_ground_truth_entities > 0 else 0
+
+    # Print results
+    print(f"Total Ground Truth Entities: {total_ground_truth_entities}")
+    print(f"Total Found Entities: {total_found_entities}")
+    print(f"Total Failures: {total_failures}")
+    print(f"Success Rate: {success_percentage:.2f}%")
+    print(f"F1 Score (average between the labels): {f1_score:.2f}")
+
     # Convert the confusion matrix to a DataFrame for better readability
     
     confusion_df = pd.DataFrame(confusion_matrix, index=relevant_labels, columns=relevant_labels)
@@ -392,7 +399,7 @@ def evaluate(gt_file_path, extracted_file_path):
     return confusion_df
                             
 
-results = evaluate('./dataset_Linked-DocRED/train_annotated.json', "./extracted_entities_bert_big.json")
+results = evaluate('./dataset_Linked-DocRED/train_annotated.json', "./extracted_entities_bert_small.json")
     
 print(results)
     
