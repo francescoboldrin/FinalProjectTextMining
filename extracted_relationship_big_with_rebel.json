@@ -1,0 +1,442 @@
+[
+    {
+        "doc_index": 0,
+        "relationships": [
+            {
+                "head": "AirAsia Zest",
+                "type": "airline hub",
+                "tail": "Ninoy Aquino International Airport"
+            },
+            {
+                "head": "AirAsia Zest",
+                "type": "headquarters location",
+                "tail": "Pasay City"
+            },
+            {
+                "head": "AirAsia Zest",
+                "type": "country",
+                "tail": "Philippines"
+            },
+            {
+                "head": "Ninoy Aquino International Airport",
+                "type": "located in the administrative territorial entity",
+                "tail": "Pasay City"
+            },
+            {
+                "head": "Ninoy Aquino International Airport",
+                "type": "country",
+                "tail": "Philippines"
+            },
+            {
+                "head": "Pasay City",
+                "type": "located in the administrative territorial entity",
+                "tail": "Metro Manila"
+            },
+            {
+                "head": "Pasay City",
+                "type": "country",
+                "tail": "Philippines"
+            },
+            {
+                "head": "Metro Manila",
+                "type": "contains administrative territorial entity",
+                "tail": "Pasay City"
+            },
+            {
+                "head": "Metro Manila",
+                "type": "country",
+                "tail": "Philippines"
+            },
+            {
+                "head": "Philippines",
+                "type": "contains administrative territorial entity",
+                "tail": "Metro Manila"
+            }
+        ]
+    },
+    {
+        "doc_index": 1,
+        "relationships": [
+            {
+                "head": "Black Sea",
+                "type": "part of",
+                "tail": "Gulf of Mexico"
+            },
+            {
+                "head": "Red Sea",
+                "type": "basin country",
+                "tail": "Norwegian"
+            },
+            {
+                "head": "Norwegian",
+                "type": "located in or next to body of water",
+                "tail": "Black Sea"
+            },
+            {
+                "head": "Norwegian",
+                "type": "located in or next to body of water",
+                "tail": "Red Sea"
+            }
+        ]
+    },
+    {
+        "doc_index": 2,
+        "relationships": [
+            {
+                "head": "Niklas Bergqvist",
+                "type": "date of birth",
+                "tail": "6 October 1962"
+            },
+            {
+                "head": "Niklas Bergqvist",
+                "type": "place of birth",
+                "tail": "Stockholm"
+            },
+            {
+                "head": "Niklas Bergqvist",
+                "type": "genre",
+                "tail": "Synthpop"
+            },
+            {
+                "head": "Niklas Bergqvist",
+                "type": "member of",
+                "tail": "Shanghai"
+            },
+            {
+                "head": "Shanghai",
+                "type": "has part",
+                "tail": "Niklas Bergqvist"
+            },
+            {
+                "head": "Shanghai",
+                "type": "genre",
+                "tail": "Synthpop"
+            }
+        ]
+    },
+    {
+        "doc_index": 3,
+        "relationships": [
+            {
+                "head": "Pacific Fair",
+                "type": "located in the administrative territorial entity",
+                "tail": "Broadbeach Waters"
+            },
+            {
+                "head": "Pacific Fair",
+                "type": "inception",
+                "tail": "1977"
+            },
+            {
+                "head": "Broadbeach Waters",
+                "type": "located in the administrative territorial entity",
+                "tail": "Queensland"
+            },
+            {
+                "head": "Pacific Fair",
+                "type": "located in the administrative territorial entity",
+                "tail": "Broadbeach Waters"
+            },
+            {
+                "head": "Pacific Fair",
+                "type": "inception",
+                "tail": "1977"
+            },
+            {
+                "head": "Pacific Fair",
+                "type": "located in the administrative territorial entity",
+                "tail": "Broadbeach Waters"
+            },
+            {
+                "head": "Pacific Fair",
+                "type": "inception",
+                "tail": "1977"
+            },
+            {
+                "head": "Pacific Fair",
+                "type": "located in the administrative territorial entity",
+                "tail": "Broadbeach Waters"
+            },
+            {
+                "head": "Pacific Fair",
+                "type": "inception",
+                "tail": "1977"
+            }
+        ]
+    },
+    {
+        "doc_index": 4,
+        "relationships": [
+            {
+                "head": "Ministry of Home Security",
+                "type": "inception",
+                "tail": "1939"
+            },
+            {
+                "head": "Sir John Anderson",
+                "type": "position held",
+                "tail": "Home Secretary"
+            }
+        ]
+    },
+    {
+        "doc_index": 5,
+        "relationships": [
+            {
+                "head": "The Lakes",
+                "type": "located in the administrative territorial entity",
+                "tail": "Western Australia"
+            },
+            {
+                "head": "The Lakes",
+                "type": "located in the administrative territorial entity",
+                "tail": "Shire of Mundaring"
+            },
+            {
+                "head": "Western Australia",
+                "type": "contains administrative territorial entity",
+                "tail": "Shire of Mundaring"
+            },
+            {
+                "head": "Western Australia",
+                "type": "capital",
+                "tail": "Perth"
+            },
+            {
+                "head": "Shire of Mundaring",
+                "type": "located in the administrative territorial entity",
+                "tail": "Western Australia"
+            },
+            {
+                "head": "Perth",
+                "type": "located in the administrative territorial entity",
+                "tail": "Western Australia"
+            },
+            {
+                "head": "Great Eastern Highway",
+                "type": "located in the administrative territorial entity",
+                "tail": "Western Australia"
+            },
+            {
+                "head": "Great Southern Highway",
+                "type": "located in the administrative territorial entity",
+                "tail": "Western Australia"
+            }
+        ]
+    },
+    {
+        "doc_index": 6,
+        "relationships": [
+            {
+                "head": "Alton",
+                "type": "located in the administrative territorial entity",
+                "tail": "Madison County"
+            },
+            {
+                "head": "Alton",
+                "type": "country",
+                "tail": "United States"
+            },
+            {
+                "head": "Mississippi River",
+                "type": "country",
+                "tail": "United States"
+            },
+            {
+                "head": "Madison County",
+                "type": "located in the administrative territorial entity",
+                "tail": "Illinois"
+            },
+            {
+                "head": "Madison County",
+                "type": "country",
+                "tail": "United States"
+            },
+            {
+                "head": "Illinois",
+                "type": "located in or next to body of water",
+                "tail": "Mississippi River"
+            },
+            {
+                "head": "Illinois",
+                "type": "contains administrative territorial entity",
+                "tail": "Madison County"
+            },
+            {
+                "head": "Illinois",
+                "type": "country",
+                "tail": "United States"
+            },
+            {
+                "head": "Illinois",
+                "type": "shares border with",
+                "tail": "Missouri"
+            },
+            {
+                "head": "United States",
+                "type": "contains administrative territorial entity",
+                "tail": "Illinois"
+            },
+            {
+                "head": "United States",
+                "type": "contains administrative territorial entity",
+                "tail": "Missouri"
+            }
+        ]
+    },
+    {
+        "doc_index": 7,
+        "relationships": [
+            {
+                "head": "Us and Them",
+                "type": "record label",
+                "tail": "Earache Records"
+            },
+            {
+                "head": "Godflesh",
+                "type": "record label",
+                "tail": "Earache Records"
+            },
+            {
+                "head": "Love and Hate in Dub",
+                "type": "record label",
+                "tail": "Earache Records"
+            },
+            {
+                "head": "Us and Them",
+                "type": "record label",
+                "tail": "Earache Records"
+            },
+            {
+                "head": "Us and Them",
+                "type": "record label",
+                "tail": "Earache Records"
+            }
+        ]
+    },
+    {
+        "doc_index": 8,
+        "relationships": [
+            {
+                "head": "Nicola Lake",
+                "type": "instance of",
+                "tail": "lake"
+            },
+            {
+                "head": "Nicola Lake",
+                "type": "located in the administrative territorial entity",
+                "tail": "British Columbia"
+            },
+            {
+                "head": "Nicola Lake",
+                "type": "country",
+                "tail": "Canada"
+            },
+            {
+                "head": "South - Central Interior",
+                "type": "located in the administrative territorial entity",
+                "tail": "British Columbia"
+            },
+            {
+                "head": "South - Central Interior",
+                "type": "country",
+                "tail": "Canada"
+            },
+            {
+                "head": "British Columbia",
+                "type": "country",
+                "tail": "Canada"
+            },
+            {
+                "head": "Canada",
+                "type": "contains administrative territorial entity",
+                "tail": "British Columbia"
+            },
+            {
+                "head": "Nicola River",
+                "type": "located in the administrative territorial entity",
+                "tail": "British Columbia"
+            }
+        ]
+    },
+    {
+        "doc_index": 9,
+        "relationships": [
+            {
+                "head": "Jonas Geirnaert",
+                "type": "date of birth",
+                "tail": "July 28, 1982"
+            },
+            {
+                "head": "Jonas Geirnaert",
+                "type": "educated at",
+                "tail": "KASK"
+            },
+            {
+                "head": "KASK",
+                "type": "located in the administrative territorial entity",
+                "tail": "Ghent"
+            }
+        ]
+    },
+    {
+        "doc_index": 10,
+        "relationships": [
+            {
+                "head": "Second River",
+                "type": "located in the administrative territorial entity",
+                "tail": "New Jersey"
+            },
+            {
+                "head": "Second River",
+                "type": "country",
+                "tail": "United States"
+            },
+            {
+                "head": "Second River",
+                "type": "mouth of the watercourse",
+                "tail": "Passaic River"
+            },
+            {
+                "head": "New Jersey",
+                "type": "country",
+                "tail": "United States"
+            },
+            {
+                "head": "United States",
+                "type": "contains administrative territorial entity",
+                "tail": "New Jersey"
+            },
+            {
+                "head": "Passaic River",
+                "type": "tributary",
+                "tail": "Second River"
+            },
+            {
+                "head": "Passaic River",
+                "type": "located in the administrative territorial entity",
+                "tail": "New Jersey"
+            },
+            {
+                "head": "Passaic River",
+                "type": "country",
+                "tail": "United States"
+            },
+            {
+                "head": "Passaic River",
+                "type": "mouth of the watercourse",
+                "tail": "Newark Bay"
+            },
+            {
+                "head": "Newark Bay",
+                "type": "located in the administrative territorial entity",
+                "tail": "New Jersey"
+            },
+            {
+                "head": "Newark Bay",
+                "type": "country",
+                "tail": "United States"
+            }
+        ]
+    }
+]
