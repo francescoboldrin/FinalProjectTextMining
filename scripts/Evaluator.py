@@ -2,7 +2,7 @@
 Author: francesco boldrin francesco.boldrin@studenti.unitn.it
 Date: 2024-11-13 11:19:54
 LastEditors: francesco boldrin francesco.boldrin@studenti.unitn.it
-LastEditTime: 2024-11-24 19:31:59
+LastEditTime: 2024-11-24 21:37:50
 FilePath: scripts/Evaluator.py
 Description: the file contains the functions to evaluate the algorithm developed, yet to decide how
 """
@@ -23,6 +23,57 @@ import torch.nn.functional as F
 # Load the pre-trained BERT model and tokenizer
 tokenizer = BertTokenizer.from_pretrained("bert-base-uncased")
 model = BertModel.from_pretrained("bert-base-uncased")
+
+
+def distance_bert(str1, str2):
+    """
+    Calculate the cosine distance between two strings. using BERT embeddings.
+    
+    Parameters:
+    - str1 (str): The first string.
+    - str2 (str): The second string.
+    
+    Returns:
+    - float: 1 - cosine similarity between the two strings.
+    """
+    # Encode the strings using the BERT tokenizer
+    inputs = tokenizer([str1, str2], return_tensors="pt", padding=True, truncation=True)
+    
+    # Get the embeddings from the BERT model
+    with torch.no_grad():
+        output = model(**inputs)
+    
+    # Extract the embeddings for the [CLS] token
+    embeddings = output.last_hidden_state[:, 0, :]
+    
+    # Calculate the cosine similarity
+    similarity = F.cosine_similarity(embeddings[0].unsqueeze(0), embeddings[1].unsqueeze(0))
+    
+    # Return the cosine distance
+    return 1 - similarity.item()
+
+def distance_jaccard(str1, str2):
+    """
+    Calculate the Jaccard distance between two strings.
+    
+    Parameters:
+    - str1 (str): The first string.
+    - str2 (str): The second string.
+    
+    Returns:
+    - float: The Jaccard distance between the two strings.
+    """
+    # Tokenize the strings
+    tokens1 = set(str1.split())
+    tokens2 = set(str2.split())
+    
+    # implement the Jaccard distance
+    set_intersection = len(tokens1.intersection(tokens2))
+    set_union = len(tokens1.union(tokens2))
+    
+    jaccard_distance = 1 - (set_intersection / set_union) if set_union > 0 else 0
+    
+    return jaccard_distance
 
 def ner_evaluate(gt_file_path:str, rec_file_path:str):
     
@@ -138,7 +189,9 @@ def extract_names_and_labels_from_gt(dataset, num_documents):
         for entity in document['entities']:
             # Extract relevant details for each entity (only name and type)
             entity_details = {
-                "name": entity.get("mentions", [{}])[0].get("name", ""),  # First mention name
+                # Get all mentions of the entity and extract the names
+                "name": [entity.get("mentions", [{}])[i].get("name", "") for i in range(len(entity.get("mentions", [{}])))],
+                
                 "label": entity.get("type", "")
             }
             entities_list.append(entity_details)
@@ -204,7 +257,13 @@ def plot_confusion_matrix(confusion_df):
     plt.yticks(rotation=0)
     plt.tight_layout()
     plt.show()
-    
+
+
+def check_similarity(ent_retr_name, list_ent_name):
+    for name in list_ent_name:
+        if distance_jaccard(ent_retr_name, name) < 0.1:
+            return True
+    return False
 
 
 def evaluate(gt_file_path, extracted_file_path):
@@ -338,20 +397,28 @@ def evaluate(gt_file_path, extracted_file_path):
 
                     # Flag to track if this entity was matched
                     entity_matched = False
+                    
+                    print("searching for: ", gt_entity)
 
                     # Loop over the extracted entities for this document
                     for ex_ent in extracted_entities[doc_index]:
                         ex_label = ex_ent['label']
 
                         # 3) Compare the entity name and the labels
-                        if ex_ent['name'] == gt_entity['name']:  # Match by name
+                        if check_similarity(ex_ent['name'], gt_entity['name']):  # Match by name
                             gt_idx = label_to_idx[gt_label]
                             ex_idx = label_to_idx[ex_label]
+                            
+                            print("found: ", ex_ent)
+                            print("\n\n")
 
                             # Increment the corresponding position in the confusion matrix
                             confusion_matrix[gt_idx][ex_idx] += 1
                             finded_ent += 1
                             entity_matched = True
+                            
+                            # erase the entity from the list of the extracted entities
+                            extracted_entities[doc_index].remove(ex_ent)
                             break
 
                     # If no match was found, count it as a failure
@@ -407,9 +474,9 @@ def evaluate(gt_file_path, extracted_file_path):
     return confusion_df
                             
 
-# results = evaluate('./dataset_Linked-DocRED/train_annotated.json', "./extracted_entities_bert_small.json")
-#     
-# print(results)
+results = evaluate('./dataset_Linked-DocRED/train_annotated.json', "./extracted_entities_flair.json")
+
+print(results)
 
 def parse_relations_ex(ex, num_of_documents):
     """
@@ -454,46 +521,29 @@ def parse_relations_gt(gt, num_of_documents):
     return relations_gt
 
 
-def distance(param, param1):
-    # TODO: THIS IS NOT FINISHED I?LL WORK ON IT tonight
-    """
-    Calculate the semantic distance between two strings using BERT embeddings.
 
-    Parameters:
-    - param (str): First string.
-    - param1 (str): Second string.
-
-    Returns:
-    - float: The cosine similarity between the embeddings of the two strings.
-    """
-    print("Calculating distance between:", param, "and", param1)
-    
-    # Tokenize the strings and convert them to input IDs, ensuring batch processing
-    inputs = tokenizer(param, param1, return_tensors='pt', padding=True, truncation=True)
-
-    # Get the BERT embeddings (last hidden state)
-    with torch.no_grad():
-        outputs = model(**inputs)
-        # Extract embeddings for the [CLS] token (index 0 for both sentences)
-        embeddings = outputs.last_hidden_state[:, 0, :]  # Shape: (batch_size, hidden_size)
-
-        # Ensure there are two embeddings (for two sentences)
-        if embeddings.shape[0] < 2:
-            raise ValueError("Expected embeddings for two sentences, but only got one.")
-
-        # embeddings[0] is for the first sentence (param)
-        # embeddings[1] is for the second sentence (param1)
-        embedding_param = embeddings[0]  # Embedding for the first string
-        embedding_param1 = embeddings[1]  # Embedding for the second string
-
-    # Compute cosine similarity between the two embeddings
-    cosine_sim = F.cosine_similarity(embedding_param.unsqueeze(0), embedding_param1.unsqueeze(0))
-
-    # Return cosine similarity as distance (1 - cosine similarity gives a measure of dissimilarity)
-    return 1 - cosine_sim.item()
 
 
 def evaluate_relationship_extraction(file_path_gt, file_path_ev): # file path to the ground truth and the extracted file
+    """
+    Evaluate the performance of a relationship extraction system by comparing the ground truth relationships with the
+    extracted relationships. The function calculates the precision of the extracted relationships based on the ground
+    truth relationships.
+    
+    Parameters:
+    - file_path_gt (str): The file path to the JSON file containing the ground truth relationships.
+    - file_path_ev (str): The file path to the JSON file containing the extracted relationships.
+    
+    Returns:
+    - None: The function prints the found relations, ground truth relations not found, and extracted relations not found.
+    
+    Additional Notes:
+    - The function uses the `parse_relations_gt` and `parse_relations_ex` functions to extract the relationships from
+      the ground truth and extracted files, respectively.
+    - The function calculates the precision of the extracted relationships by comparing the relationships based on the
+        head entity, relation type, and tail entity.
+    """
+    
     gt = DataLoader.read_linked_docred(file_path_gt)
     ex = DataLoader.read_extracted_relations_json(file_path_ev)
     
@@ -511,7 +561,8 @@ def evaluate_relationship_extraction(file_path_gt, file_path_ev): # file path to
     for rel_gt in rel_gts:
         found = False
         for rel_ex in rel_exs:
-            if rel_gt [0] == rel_ex[0] and rel_gt[2] == rel_ex[2]:
+            # THIS IS THE IMPORTANT PART WE SEARCH FOR RELATIONSHIPS WITH THE SAME HEAD AND TAIL (OR AT LEAST THE SAME MEANING SUCH AS Zest AirAsia and AirAsia Zest)
+            if distance(rel_gt[0], rel_ex[0])<0.5 and distance(rel_gt[2], rel_ex[2])<0.5:
                 found = True
                 found_relations.append(rel_gt)
                 break
@@ -519,12 +570,13 @@ def evaluate_relationship_extraction(file_path_gt, file_path_ev): # file path to
         if not found:
             gt_not_found.append(rel_gt)
             
-    for rel_ex in rel_exs:
-        found = False
-        for rel_gt in rel_gts:
-            if distance(rel_gt[0], rel_ex[0])<0.5 and distance(rel_gt[2], rel_ex[2])<0.5:
-                found = True
-                break
+    # for rel_ex in rel_exs:
+    #     found = False
+    #     for rel_gt in rel_gts:
+    #         # does not need to be the same exact words but the same meaning such as Zest AirAsia and AirAsia Zest
+    #         if distance(rel_gt[0], rel_ex[0])<0.5 and distance(rel_gt[2], rel_ex[2])<0.5:
+    #             found = True
+    #             break
         
         if not found:
             ex_not_found.append(rel_ex)
@@ -546,7 +598,8 @@ def evaluate_relationship_extraction(file_path_gt, file_path_ev): # file path to
     # print(relations_gt)
     # print(relations_ev)
     
-evaluate_relationship_extraction('dataset_Linked-DocRED/train_annotated.json', 'extracted_relationship_big_with_rebel.json')
+    
+
     
     
     

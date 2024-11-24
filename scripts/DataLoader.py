@@ -2,7 +2,7 @@
 Author: francesco boldrin francesco.boldrin@studenti.unitn.it
 Date: 2024-11-13 11:06:44
 LastEditors: francesco boldrin francesco.boldrin@studenti.unitn.it
-LastEditTime: 2024-11-15 18:25:21
+LastEditTime: 2024-11-24 18:50:33
 FilePath: scripts/DataLoader.py
 Description: Loading data functions in this file
 """
@@ -178,6 +178,33 @@ def read_extracted_entities_json(filepath: str) -> dict:
                 raise ValueError(f"Malformed entry in JSON file: {entry}")
 
         return extracted_entities
+
+    except FileNotFoundError:
+        raise FileNotFoundError(f"The file at {filepath} was not found.")
+    except json.JSONDecodeError:
+        raise ValueError(f"Failed to decode JSON from the file at {filepath}. Please ensure it is correctly formatted.")
+    
+def read_extracted_relations_json(filepath: str) -> dict:
+    """
+    Reads a JSON file containing extracted relations and their metadata and returns its content as a dictionary.
+
+    :param filepath: Path to the JSON file.
+    :return: A dictionary where the keys are `doc_index` and the values are the relations dictionary for each document.
+    """
+    try:
+        # Open and load the JSON file
+        with open(filepath, 'r', encoding='utf-8') as file:
+            data = json.load(file)
+
+        # Convert the list of documents into a dictionary indexed by `doc_index`
+        extracted_relations = {}
+        for entry in data:
+            if 'doc_index' in entry and 'relationships' in entry:
+                extracted_relations[entry['doc_index']] = entry['relationships']
+            else:
+                raise ValueError(f"Malformed entry in JSON file: {entry}")
+
+        return extracted_relations
 
     except FileNotFoundError:
         raise FileNotFoundError(f"The file at {filepath} was not found.")
