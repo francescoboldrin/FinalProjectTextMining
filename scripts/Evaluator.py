@@ -265,6 +265,51 @@ def check_similarity(ent_retr_name, list_ent_name):
             return True
     return False
 
+"""
+Even if it's same entity, there are several different names
+ex. Zest Airways, Inc. & Zest Air
+To avoid this, I made gt file, which 'head' and 'tail' is not a single word,
+but the list of all same entity words
+
+usage example :
+rel_gt = read_linked_docred("./dataset_Linked-DocRED/train_annotated.json")
+gt_relations = extract_relations_from_gt(rel_gt, 10)
+
+output : 
+list of docs
+each docs have list of relations
+each relations have "head", "type", "tail",
+"head" and "tail" have the list of same entity words
+"""
+def extract_relations_from_gt(dataset, num_documents):
+
+    relation_dict = DataLoader.read_linked_docred('./dataset_Linked-DocRED/rel_info.json')
+
+    docs_list = []
+
+    for doc_index, document in enumerate(dataset[:num_documents]):
+        extracted_doc = {}
+        extracted_doc["doc_index"] = doc_index
+
+        relation_list = []
+
+        entities = document['entities']
+        for relation in document['relations']:
+            head_entity = relation.get("h", "")
+            tail_entity = relation.get("t", "")
+            entity_details = {
+                "head": list(set([mention.get("name", "")for mention in entities[head_entity]["mentions"]])),
+                "type": relation_dict[relation.get("r", "")],
+                "tail": list(set([mention.get("name", "")for mention in entities[tail_entity]["mentions"]])),
+            }
+            relation_list.append(entity_details)
+
+        # Store extracted name and label for the current document
+        extracted_doc["relationships"] = relation_list
+        docs_list.append(extracted_doc)
+
+    return docs_list
+
 
 def evaluate(gt_file_path, extracted_file_path):
     """

@@ -90,7 +90,7 @@ def parse_input_sentences(document):
 
 
 
-def store_entities_per_document(doc_index, entities):
+def store_entities_per_document(doc_index, entities, output_file):
     """
     Store entities per document in a JSON file.
 
@@ -103,7 +103,7 @@ def store_entities_per_document(doc_index, entities):
                         ]
                      }
     """
-    output_file = "extracted_entities_bert_big.json"
+    #output_file = "extracted_entities_bert_big.json"
 
     # Initialize the data structure to be stored
     document_data = {
@@ -282,7 +282,7 @@ def extract_knowledge(doc_index, document, tagger):
                     
     """
     # sentences = parse_input_sentences(document)
-    print(document)
+    #print(document)
     sentences = document
     
     if DEBUG:
@@ -314,8 +314,9 @@ def extract_knowledge(doc_index, document, tagger):
                         
         
     # Store extracted entities in the JSON file
-    store_entities_per_document(doc_index, global_entities_dict)
-
+    output_file = "extracted_entities_flair_day_test.json"
+    store_entities_per_document(doc_index, global_entities_dict, output_file)
+    """
     # Step 2: Relationship Extraction
     for index, sentence in enumerate(sentences):
         sentence_text = " ".join(sentence)  # Reconstruct the sentence from tokens
@@ -357,7 +358,8 @@ def extract_knowledge(doc_index, document, tagger):
 
     # Store extracted relationships in the JSON file
     store_relationships_per_document(doc_index, relationships)
-
+    """
+    return global_entities_dict
 
 
 def extract_knowledge_bert(doc_index, document, model, tokenizer):
