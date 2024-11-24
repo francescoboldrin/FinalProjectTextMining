@@ -1,0 +1,905 @@
+[
+    {
+        "doc_index": 0,
+        "entities": {
+            "Miguel Riofrio S\u00e1nchez": [
+                "PER",
+                [
+                    0
+                ]
+            ],
+            "Loja": [
+                "LOC",
+                [
+                    1
+                ]
+            ],
+            "Ecuador": [
+                "LOC",
+                [
+                    2,
+                    3,
+                    4
+                ]
+            ],
+            "La Emancipada": [
+                "MISC",
+                [
+                    2,
+                    4
+                ]
+            ],
+            "Juan Le\u00f3n Mera": [
+                "PER",
+                [
+                    3
+                ]
+            ],
+            "Cumanda": [
+                "MISC",
+                [
+                    3
+                ]
+            ],
+            "Alejandro Carri\u00f3n": [
+                "PER",
+                [
+                    4
+                ]
+            ],
+            "Miguel Riofr\u00edo": [
+                "PER",
+                [
+                    4
+                ]
+            ],
+            "Riofrio": [
+                "PER",
+                [
+                    5
+                ]
+            ],
+            "Peru": [
+                "LOC",
+                [
+                    5
+                ]
+            ]
+        }
+    },
+    {
+        "doc_index": 1,
+        "entities": {
+            "Leon Crouch": [
+                "PER",
+                [
+                    0,
+                    6
+                ]
+            ],
+            "Southampton Football Club": [
+                "ORG",
+                [
+                    0
+                ]
+            ],
+            "Crouch": [
+                "PER",
+                [
+                    1,
+                    4,
+                    5
+                ]
+            ],
+            "Fullers Group": [
+                "ORG",
+                [
+                    1
+                ]
+            ],
+            "Southampton F.C": [
+                "ORG",
+                [
+                    2
+                ]
+            ],
+            "Michael Wilde": [
+                "PER",
+                [
+                    3
+                ]
+            ],
+            "Wilde": [
+                "PER",
+                [
+                    4
+                ]
+            ],
+            "Rupert Lowe": [
+                "PER",
+                [
+                    4
+                ]
+            ],
+            "Saints": [
+                "ORG",
+                [
+                    5
+                ]
+            ],
+            "Ted Bates": [
+                "PER",
+                [
+                    5
+                ]
+            ],
+            "Southampton": [
+                "LOC",
+                [
+                    5,
+                    6
+                ]
+            ],
+            "St Mary 's Stadium": [
+                "LOC",
+                [
+                    5
+                ]
+            ],
+            "Southampton Supporter 's Club": [
+                "ORG",
+                [
+                    6
+                ]
+            ],
+            "Sky Sports News": [
+                "ORG",
+                [
+                    6
+                ]
+            ]
+        }
+    },
+    {
+        "doc_index": 2,
+        "entities": {
+            "Paris Belongs to Us": [
+                "MISC",
+                [
+                    0
+                ]
+            ],
+            "Paris Is Ours": [
+                "MISC",
+                [
+                    0
+                ]
+            ],
+            "Jacques Rivette": [
+                "PER",
+                [
+                    0
+                ]
+            ],
+            "Paris": [
+                "LOC",
+                [
+                    1
+                ]
+            ],
+            "Shakespeare": [
+                "PER",
+                [
+                    1
+                ]
+            ],
+            "Pericles": [
+                "MISC",
+                [
+                    1
+                ]
+            ],
+            "Anne": [
+                "PER",
+                [
+                    2
+                ]
+            ],
+            "Terry": [
+                "PER",
+                [
+                    3
+                ]
+            ],
+            "Cold War": [
+                "MISC",
+                [
+                    4
+                ]
+            ]
+        }
+    },
+    {
+        "doc_index": 3,
+        "entities": {
+            "United Kingdom": [
+                "LOC",
+                [
+                    2
+                ]
+            ],
+            "Ireland": [
+                "LOC",
+                [
+                    2
+                ]
+            ],
+            "World War I": [
+                "MISC",
+                [
+                    3
+                ]
+            ],
+            "World War II": [
+                "MISC",
+                [
+                    3
+                ]
+            ],
+            "Charlie and the Chocolate Factory": [
+                "MISC",
+                [
+                    4
+                ]
+            ],
+            "Roald Dahl": [
+                "PER",
+                [
+                    4
+                ]
+            ],
+            "Everlasting Gobstoppers": [
+                "MISC",
+                [
+                    4
+                ]
+            ]
+        }
+    },
+    {
+        "doc_index": 4,
+        "entities": {
+            "Armenia": [
+                "LOC",
+                [
+                    0,
+                    0,
+                    2,
+                    5,
+                    5
+                ]
+            ],
+            "Romania": [
+                "LOC",
+                [
+                    0,
+                    0,
+                    2,
+                    4,
+                    5,
+                    5,
+                    5
+                ]
+            ],
+            "Bucharest": [
+                "LOC",
+                [
+                    2
+                ]
+            ],
+            "Yerevan": [
+                "LOC",
+                [
+                    2
+                ]
+            ],
+            "Organization of the Black Sea Economic Cooperation": [
+                "ORG",
+                [
+                    3
+                ]
+            ],
+            "Serzh Sargsyan": [
+                "PER",
+                [
+                    5
+                ]
+            ],
+            "Teodor Mele\u0219canu": [
+                "PER",
+                [
+                    5
+                ]
+            ],
+            "Republic of Armenia": [
+                "LOC",
+                [
+                    5
+                ]
+            ],
+            "USSR": [
+                "LOC",
+                [
+                    5
+                ]
+            ]
+        }
+    },
+    {
+        "doc_index": 5,
+        "entities": {
+            "Canton Memorial Civic Center": [
+                "LOC",
+                [
+                    0
+                ]
+            ],
+            "Canton": [
+                "LOC",
+                [
+                    0,
+                    2
+                ]
+            ],
+            "Ohio": [
+                "LOC",
+                [
+                    0
+                ]
+            ],
+            "United States": [
+                "LOC",
+                [
+                    0
+                ]
+            ],
+            "NBA G League": [
+                "MISC",
+                [
+                    0
+                ]
+            ],
+            "Canton Legends": [
+                "ORG",
+                [
+                    1
+                ]
+            ],
+            "Canton Invaders": [
+                "ORG",
+                [
+                    1
+                ]
+            ],
+            "Ohio Aviators": [
+                "ORG",
+                [
+                    1
+                ]
+            ],
+            "American Basketball Association": [
+                "ORG",
+                [
+                    1
+                ]
+            ],
+            "SMG": [
+                "ORG",
+                [
+                    2
+                ]
+            ],
+            "McKinley Room": [
+                "LOC",
+                [
+                    3
+                ]
+            ],
+            "Pro Football Hall of Fame": [
+                "MISC",
+                [
+                    4
+                ]
+            ]
+        }
+    },
+    {
+        "doc_index": 6,
+        "entities": {
+            "Ezri Dax": [
+                "PER",
+                [
+                    0
+                ]
+            ],
+            "Nicole de Boer": [
+                "PER",
+                [
+                    1
+                ]
+            ],
+            "Deep Space Nine": [
+                "MISC",
+                [
+                    1
+                ]
+            ],
+            "Dax": [
+                "PER",
+                [
+                    2,
+                    5,
+                    10,
+                    13
+                ]
+            ],
+            "Ezri": [
+                "PER",
+                [
+                    3,
+                    10,
+                    12,
+                    13
+                ]
+            ],
+            "Jadzia": [
+                "PER",
+                [
+                    3,
+                    9,
+                    9
+                ]
+            ],
+            "Terry Farrell": [
+                "PER",
+                [
+                    3
+                ]
+            ],
+            "Nana Visitor": [
+                "PER",
+                [
+                    4
+                ]
+            ],
+            "Kira Nerys": [
+                "PER",
+                [
+                    4
+                ]
+            ],
+            "De Boer": [
+                "PER",
+                [
+                    6
+                ]
+            ],
+            "Hans Beimler": [
+                "PER",
+                [
+                    6
+                ]
+            ],
+            "Los Angeles": [
+                "LOC",
+                [
+                    6
+                ]
+            ],
+            "Image in the Sand": [
+                "MISC",
+                [
+                    7
+                ]
+            ],
+            "What You Leave Behind": [
+                "MISC",
+                [
+                    8
+                ]
+            ],
+            "Worf": [
+                "PER",
+                [
+                    9,
+                    12
+                ]
+            ],
+            "Michael Dorn": [
+                "PER",
+                [
+                    9
+                ]
+            ],
+            "Julian Bashir": [
+                "PER",
+                [
+                    10
+                ]
+            ],
+            "Alexander Siddig": [
+                "PER",
+                [
+                    10
+                ]
+            ],
+            "Ira Steven Behr": [
+                "PER",
+                [
+                    11
+                ]
+            ],
+            "de Boer": [
+                "PER",
+                [
+                    11
+                ]
+            ],
+            "Ronald D. Moore": [
+                "PER",
+                [
+                    11
+                ]
+            ],
+            "Bashir": [
+                "PER",
+                [
+                    12
+                ]
+            ]
+        }
+    },
+    {
+        "doc_index": 7,
+        "entities": {
+            "William George Helis Sr": [
+                "PER",
+                [
+                    0
+                ]
+            ],
+            "United States": [
+                "LOC",
+                [
+                    0
+                ]
+            ],
+            "Pittsburg Press": [
+                "ORG",
+                [
+                    1
+                ]
+            ],
+            "William Helis": [
+                "PER",
+                [
+                    1,
+                    2,
+                    5
+                ]
+            ],
+            "New Orleans": [
+                "LOC",
+                [
+                    2,
+                    3
+                ]
+            ],
+            "Louisiana": [
+                "LOC",
+                [
+                    2
+                ]
+            ],
+            "Johns Hopkins Hospital": [
+                "ORG",
+                [
+                    2
+                ]
+            ],
+            "Baltimore": [
+                "LOC",
+                [
+                    2
+                ]
+            ],
+            "Maryland": [
+                "LOC",
+                [
+                    2
+                ]
+            ],
+            "Metairie": [
+                "LOC",
+                [
+                    3
+                ]
+            ],
+            "Albert Weiblen": [
+                "PER",
+                [
+                    4
+                ]
+            ],
+            "Fair Grounds Racing Hall": [
+                "ORG",
+                [
+                    5
+                ]
+            ],
+            "of Fame": [
+                "MISC",
+                [
+                    5
+                ]
+            ],
+            "William George Jr.": [
+                "PER",
+                [
+                    6
+                ]
+            ]
+        }
+    },
+    {
+        "doc_index": 8,
+        "entities": {
+            "Revolt of the Brotherhoods": [
+                "MISC",
+                [
+                    0
+                ]
+            ],
+            "Charles V": [
+                "PER",
+                [
+                    0
+                ]
+            ],
+            "Valencia": [
+                "LOC",
+                [
+                    0,
+                    4
+                ]
+            ],
+            "Crown of": [
+                "LOC",
+                [
+                    0,
+                    4
+                ]
+            ],
+            "Aragon": [
+                "LOC",
+                [
+                    0,
+                    2,
+                    6
+                ]
+            ],
+            "Valencian revolt": [
+                "MISC",
+                [
+                    2
+                ]
+            ],
+            "Majorca": [
+                "LOC",
+                [
+                    2
+                ]
+            ],
+            "Castile": [
+                "LOC",
+                [
+                    4,
+                    5,
+                    6
+                ]
+            ],
+            "Charles": [
+                "PER",
+                [
+                    5,
+                    6
+                ]
+            ],
+            "Germany": [
+                "LOC",
+                [
+                    6
+                ]
+            ],
+            "Spain": [
+                "LOC",
+                [
+                    6
+                ]
+            ]
+        }
+    },
+    {
+        "doc_index": 9,
+        "entities": {
+            "Tod James Murphy": [
+                "PER",
+                [
+                    0
+                ]
+            ],
+            "Seattle SuperSonics": [
+                "ORG",
+                [
+                    0
+                ]
+            ],
+            "University of California": [
+                "ORG",
+                [
+                    1
+                ]
+            ],
+            "Irvine": [
+                "ORG",
+                [
+                    1
+                ]
+            ],
+            "Murphy": [
+                "PER",
+                [
+                    1,
+                    3,
+                    5
+                ]
+            ],
+            "Los Angeles Clippers": [
+                "ORG",
+                [
+                    2
+                ]
+            ],
+            "Minnesota Timberwolves": [
+                "ORG",
+                [
+                    2
+                ]
+            ],
+            "Detroit Pistons": [
+                "ORG",
+                [
+                    2
+                ]
+            ],
+            "Golden State Warriors": [
+                "ORG",
+                [
+                    2
+                ]
+            ],
+            "Timberwolves": [
+                "ORG",
+                [
+                    4
+                ]
+            ],
+            "Los Angeles Lakers": [
+                "ORG",
+                [
+                    4
+                ]
+            ],
+            "UC Irvine": [
+                "ORG",
+                [
+                    5
+                ]
+            ],
+            "Gordon College": [
+                "ORG",
+                [
+                    5
+                ]
+            ]
+        }
+    },
+    {
+        "doc_index": 10,
+        "entities": {
+            "My Uncle Napoleon": [
+                "MISC",
+                [
+                    0
+                ]
+            ],
+            "D\u00e2'i j\u00e2n N\u00e2pol'on": [
+                "MISC",
+                [
+                    0
+                ]
+            ],
+            "Dear Uncle Napoleon": [
+                "MISC",
+                [
+                    0
+                ]
+            ],
+            "Iraj Pezeshkzad": [
+                "PER",
+                [
+                    0
+                ]
+            ],
+            "Tehran": [
+                "LOC",
+                [
+                    0
+                ]
+            ],
+            "Nasser Taghvai": [
+                "PER",
+                [
+                    1
+                ]
+            ],
+            "Iran": [
+                "LOC",
+                [
+                    2,
+                    3,
+                    3,
+                    3,
+                    4,
+                    5
+                ]
+            ],
+            "Nafisi": [
+                "PER",
+                [
+                    2
+                ]
+            ],
+            "World War II": [
+                "MISC",
+                [
+                    2
+                ]
+            ],
+            "Ryan": [
+                "PER",
+                [
+                    2
+                ]
+            ],
+            "MI6": [
+                "ORG",
+                [
+                    5
+                ]
+            ],
+            "Operation Boot": [
+                "MISC",
+                [
+                    5
+                ]
+            ],
+            "Dick Davis": [
+                "PER",
+                [
+                    6
+                ]
+            ]
+        }
+    }
+]

@@ -36,3 +36,14 @@ def main():
         # evaluate(knownledge_graph, document)
     
 main()
+
+"""
+## fine-tuning part
+making_finetuning_data("./dataset_Linked-DocRED/train_annotated.json", "./finetuning_dataset/train.txt")
+making_finetuning_data("./dataset_Linked-DocRED/dev.json", "./finetuning_dataset/dev.txt")
+making_finetuning_data("./dataset_Linked-DocRED/test.json", "./finetuning_dataset/test.txt")
+
+tagger = SequenceTagger.load('de-ner-large')
+# Before start fine-tuning, check your GPU is available
+flair_finetuning(tagger, "./finetuning_dataset", "train.txt", "dev.txt", "test.txt")
+"""
