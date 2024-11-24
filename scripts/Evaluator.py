@@ -2,7 +2,7 @@
 Author: francesco boldrin francesco.boldrin@studenti.unitn.it
 Date: 2024-11-13 11:19:54
 LastEditors: francesco boldrin francesco.boldrin@studenti.unitn.it
-LastEditTime: 2024-11-24 21:37:50
+LastEditTime: 2024-11-24 22:34:30
 FilePath: scripts/Evaluator.py
 Description: the file contains the functions to evaluate the algorithm developed, yet to decide how
 """
@@ -519,9 +519,9 @@ def evaluate(gt_file_path, extracted_file_path):
     return confusion_df
                             
 
-results = evaluate('./dataset_Linked-DocRED/train_annotated.json', "./extracted_entities_flair.json")
-
-print(results)
+# results = evaluate('./dataset_Linked-DocRED/train_annotated.json', "./extracted_entities_flair.json")
+# 
+# print(results)
 
 def parse_relations_ex(ex, num_of_documents):
     """
@@ -566,7 +566,46 @@ def parse_relations_gt(gt, num_of_documents):
     return relations_gt
 
 
+def load_gt_relations(file_path):
+    """
+    Load the ground truth relationships from the specified file path.
 
+    Parameters:
+    - file_path (str): The file path to the JSON file containing the ground truth relationships.
+    
+    from this: 
+    {
+        "doc_index": 0,
+        "relationships": [
+            {
+                "head": [
+                    "AirAsia Zest",
+                    "Asian Spirit",
+                    "Zest Air",
+                    "Zest Airways, Inc.",
+                    "Asian Spirit and Zest Air"
+                ],
+                "type": "headquarters location",
+                "tail": [
+                    "Pasay City"
+                ]
+            },
+    to this:
+    [(head, type, tail), ...]
+    """
+    
+    with open(file_path, "r") as file:
+        data = json.load(file)
+        
+    relations_gt = []
+    
+    for doc in data:
+        for relation in doc['relationships']:
+            head = relation['head']
+            tail = relation['tail']
+            relations_gt.append((head, relation['type'], tail))
+            
+    return relations_gt
 
 
 def evaluate_relationship_extraction(file_path_gt, file_path_ev): # file path to the ground truth and the extracted file
@@ -589,51 +628,46 @@ def evaluate_relationship_extraction(file_path_gt, file_path_ev): # file path to
         head entity, relation type, and tail entity.
     """
     
-    gt = DataLoader.read_linked_docred(file_path_gt)
+    gt = load_gt_relations(file_path_gt)
     ex = DataLoader.read_extracted_relations_json(file_path_ev)
     
     rel_exs = parse_relations_ex(ex, 10)
     
+    for i in range(10):
+        print(rel_exs[i])
+    print("\n\n")
+    for i in range(10):
+        print(gt[i])
     
-    
-    rel_gts = parse_relations_gt(gt, 10)
+    print("\n\n")
+    rel_gts = gt
     
     
     found_relations = []
     gt_not_found = []
     ex_not_found = []
     
+    
     for rel_gt in rel_gts:
         found = False
+        
+        print("Searching for: ", rel_gt)
         for rel_ex in rel_exs:
             # THIS IS THE IMPORTANT PART WE SEARCH FOR RELATIONSHIPS WITH THE SAME HEAD AND TAIL (OR AT LEAST THE SAME MEANING SUCH AS Zest AirAsia and AirAsia Zest)
-            if distance(rel_gt[0], rel_ex[0])<0.5 and distance(rel_gt[2], rel_ex[2])<0.5:
+            if check_similarity(rel_ex[0], rel_gt[0]) and check_similarity(rel_ex[2], rel_gt[2]):
                 found = True
+                print("Found: ", rel_ex)
                 found_relations.append(rel_gt)
                 break
         
         if not found:
             gt_not_found.append(rel_gt)
             
-    # for rel_ex in rel_exs:
-    #     found = False
-    #     for rel_gt in rel_gts:
-    #         # does not need to be the same exact words but the same meaning such as Zest AirAsia and AirAsia Zest
-    #         if distance(rel_gt[0], rel_ex[0])<0.5 and distance(rel_gt[2], rel_ex[2])<0.5:
-    #             found = True
-    #             break
-        
-        if not found:
-            ex_not_found.append(rel_ex)
-            
     print("Found relations:")
     print(found_relations)
     
     print("Ground truth relations not found:")
     print(gt_not_found)
-    
-    print("Extracted relations not found:")
-    print(ex_not_found)
     
     # percentage of found relations
     precision = len(found_relations) / len(rel_gts)
@@ -644,7 +678,7 @@ def evaluate_relationship_extraction(file_path_gt, file_path_ev): # file path to
     # print(relations_ev)
     
     
-
+results = evaluate_relationship_extraction('./dataset_gt/train_annotated_relations.json', "./extracted_relationship_big_with_rebel.json")
     
     
     
