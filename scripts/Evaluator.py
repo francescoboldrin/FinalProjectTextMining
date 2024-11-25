@@ -2,7 +2,7 @@
 Author: francesco boldrin francesco.boldrin@studenti.unitn.it
 Date: 2024-11-13 11:19:54
 LastEditors: francesco boldrin francesco.boldrin@studenti.unitn.it
-LastEditTime: 2024-11-24 22:34:30
+LastEditTime: 2024-11-25 11:50:54
 FilePath: scripts/Evaluator.py
 Description: the file contains the functions to evaluate the algorithm developed, yet to decide how
 """
@@ -20,9 +20,9 @@ from transformers import BertTokenizer, BertModel
 import torch
 import torch.nn.functional as F
 
-# Load the pre-trained BERT model and tokenizer
-tokenizer = BertTokenizer.from_pretrained("bert-base-uncased")
-model = BertModel.from_pretrained("bert-base-uncased")
+# # Load the pre-trained BERT model and tokenizer
+# tokenizer = BertTokenizer.from_pretrained("bert-base-uncased")
+# model = BertModel.from_pretrained("bert-base-uncased")
 
 
 def distance_bert(str1, str2):
@@ -261,7 +261,7 @@ def plot_confusion_matrix(confusion_df):
 
 def check_similarity(ent_retr_name, list_ent_name):
     for name in list_ent_name:
-        if distance_jaccard(ent_retr_name, name) < 0.1:
+        if distance_jaccard(ent_retr_name, name) < 0.2:
             return True
     return False
 
@@ -451,16 +451,19 @@ def evaluate(gt_file_path, extracted_file_path):
 
                         # 3) Compare the entity name and the labels
                         if check_similarity(ex_ent['name'], gt_entity['name']):  # Match by name
-                            gt_idx = label_to_idx[gt_label]
-                            ex_idx = label_to_idx[ex_label]
-                            
-                            print("found: ", ex_ent)
-                            print("\n\n")
-
-                            # Increment the corresponding position in the confusion matrix
-                            confusion_matrix[gt_idx][ex_idx] += 1
-                            finded_ent += 1
-                            entity_matched = True
+                            try:
+                                gt_idx = label_to_idx[gt_label]
+                                ex_idx = label_to_idx[ex_label]
+                                
+                                print("found: ", ex_ent)
+                                print("\n\n")
+    
+                                # Increment the corresponding position in the confusion matrix
+                                confusion_matrix[gt_idx][ex_idx] += 1
+                                finded_ent += 1
+                                entity_matched = True
+                            except KeyError:
+                                continue
                             
                             # erase the entity from the list of the extracted entities
                             extracted_entities[doc_index].remove(ex_ent)
@@ -519,9 +522,9 @@ def evaluate(gt_file_path, extracted_file_path):
     return confusion_df
                             
 
-# results = evaluate('./dataset_Linked-DocRED/train_annotated.json', "./extracted_entities_flair.json")
-# 
-# print(results)
+results = evaluate('./dataset_Linked-DocRED/train_annotated.json', "./extracted_entities_llm_gemini.json")
+
+print(results)
 
 def parse_relations_ex(ex, num_of_documents):
     """
@@ -647,6 +650,13 @@ def evaluate_relationship_extraction(file_path_gt, file_path_ev): # file path to
     gt_not_found = []
     ex_not_found = []
     
+    # build a confusion matrix with the labels (so the type field in the relationships)
+    
+    
+    # print("Labels: ", labels)
+    
+    print("labels: ", set([rel[1] for rel in rel_gts]))
+    
     
     for rel_gt in rel_gts:
         found = False
@@ -662,7 +672,24 @@ def evaluate_relationship_extraction(file_path_gt, file_path_ev): # file path to
         
         if not found:
             gt_not_found.append(rel_gt)
-            
+
+    labels = [l for l in set([rel[1] for rel in found_relations])]
+
+    confusion_matrix = np.zeros((len(labels), len(labels)))
+
+    # Create a label-to-index map for easy access
+    label_to_idx = {label: idx for idx, label in enumerate(labels)}
+    
+    for rel_gt in found_relations:
+        for rel_ex in rel_exs:
+            if check_similarity(rel_ex[0], rel_gt[0]) and check_similarity(rel_ex[2], rel_gt[2]):
+                try:
+                    gt_idx = label_to_idx[rel_gt[1]]
+                    ex_idx = label_to_idx[rel_ex[1]]
+                    confusion_matrix[gt_idx][ex_idx] += 1
+                except KeyError:
+                    continue
+    
     print("Found relations:")
     print(found_relations)
     
@@ -674,11 +701,24 @@ def evaluate_relationship_extraction(file_path_gt, file_path_ev): # file path to
     
     print("Precision: ", precision)
     
+    
+    # # Normalize the confusion matrix to values between 0 and 1
+    # Normalization is done row-wise, dividing by the total entities for that ground truth label
+    for i, row in enumerate(confusion_matrix):
+        row_sum = sum(row)
+        if row_sum > 0:  # To avoid division by zero
+            confusion_matrix[i] = [value / row_sum for value in row]
+
+    # transform the confusion matrix into a DataFrame
+    confusion_df = pd.DataFrame(confusion_matrix, index=labels, columns=labels)
+    
+    plot_confusion_matrix(confusion_df)
+    
     # print(relations_gt)
     # print(relations_ev)
     
     
-results = evaluate_relationship_extraction('./dataset_gt/train_annotated_relations.json', "./extracted_relationship_big_with_rebel.json")
+# results = evaluate_relationship_extraction('./dataset_gt/train_annotated_relations.json', "./extracted_relationship_llm_gemini.json")
     
     
     

@@ -2,10 +2,13 @@
 Author: francesco boldrin francesco.boldrin@studenti.unitn.it
 Date: 2024-11-13 11:13:30
 LastEditors: francesco boldrin francesco.boldrin@studenti.unitn.it
-LastEditTime: 2024-11-15 20:52:04
+LastEditTime: 2024-11-25 11:49:39
 FilePath: scripts/KnowledgeExtractor.py
 Description: functions to extract entities and linking between entitites to create a knowledge graph
 """
+import ast
+import os
+
 DEBUG = 1
 
 import json
@@ -15,15 +18,13 @@ from transformers import AutoModelForSeq2SeqLM, AutoTokenizer, AutoModelForToken
 import torch
 from transformers import AutoTokenizer, AutoModelForSequenceClassification, pipeline
 from transformers import AutoModelForSeq2SeqLM, AutoTokenizer
-import os
-from litellm import completion
 
 from transformers import T5Tokenizer, T5ForConditionalGeneration
 
-device = torch.device("cuda") if torch.cuda.is_available() else torch.device('cpu')
-
-tokenizer_for_relationship = T5Tokenizer.from_pretrained("google/flan-t5-large")
-model_for_relationship = T5ForConditionalGeneration.from_pretrained("knowledgator/t5-for-ie").to(device)
+# device = torch.device("cuda") if torch.cuda.is_available() else torch.device('cpu')
+# 
+# tokenizer_for_relationship = T5Tokenizer.from_pretrained("google/flan-t5-large")
+# model_for_relationship = T5ForConditionalGeneration.from_pretrained("knowledgator/t5-for-ie").to(device)
 
 
 debug_sentences = [
@@ -144,7 +145,7 @@ def store_relationships_per_document(doc_index, relationships):
                               ]
                           }
     """
-    output_file = "extracted_relationship_big.json"
+    output_file = "extracted_relationship_llm_gemini.json"
     output_dir = os.path.dirname(output_file)
 
     # Ensure the directory for the output file exists
@@ -492,3 +493,168 @@ def extract_knowledge_bert(doc_index, document, model, tokenizer):
 # tagger = SequenceTagger.load('de-ner-large')
 # 
 # extract_knowledge(0, [], tagger)
+
+def parse_text_response(response_text):
+    """
+    Parse the text response from the LLM model.
+    
+    from the response text extract the entities and their labels
+    
+    the entities are in the format:
+    (entity_name, entity_label) # comment to explain the format
+    
+    Parameters:
+    - response_text (str): Text response from the LLM model.
+    
+    eliminate the prompt, and the comments
+    """
+        
+    entities = []
+    
+    text_to_parse = str(response_text)
+    
+    response_text = text_to_parse.split("\n")
+    
+    for line in response_text:
+        print(line)
+        if line.startswith("("):
+            print(line)
+            # parse the line    
+            entity_name, entity_label = line[1:-1].split(", ")
+            
+            entities.append((entity_name, entity_label))
+    
+    return {
+        "entities": entities
+    }
+
+
+def parse_simple_text_to_list(text):
+    """
+    Converts a formatted text string into a Python list of tuples.
+
+    Args:
+    text (str): The input text in the specified format.
+
+    Returns:
+    list: A list of tuples extracted from the text.
+    """
+    try:
+        # Use eval to parse the text
+        parsed_list = eval(text.strip())
+
+        # Ensure the result is a list of tuples
+        if isinstance(parsed_list, list) and all(isinstance(item, tuple) for item in parsed_list):
+            return parsed_list
+        else:
+            raise ValueError("The input text is not properly formatted as a list of tuples.")
+    except Exception as e:
+        raise ValueError(f"Error parsing the text: {e}")
+
+
+def entity_extraction_llm(index, document, genai):
+    model = genai.GenerativeModel("gemini-1.5-flash")
+    
+    # get togheter all the sentences in a single text
+    text = ""
+    for sentence in document:
+        text += " ".join(sentence) + " "
+
+    prompt = f"""
+        Extract all named entities from the provided text. Return the results strictly as a list of tuples in the format (entity_name, entity_label), with no additional text or commentary. Only include entities that belong to the following categories: LOCATION, ORGANIZATION, PERSON, PRODUCT. Ensure the entity_label is one of the specified categories.
+
+        Text: {text}
+        """
+
+    response = model.generate_content(prompt)
+    
+    result = parse_simple_text_to_list(response.text)
+    
+    parsed_result = {}
+    
+    print(result)
+    
+    for item in result:
+        entity_name, entity_label = item
+        if entity_label == "LOCATION":
+            entity_label = "LOC"
+        elif entity_label == "ORGANIZATION":
+            entity_label = "ORG"
+        elif entity_label == "PERSON":
+            entity_label = "PER"
+        elif entity_label == "PRODUCT":
+            entity_label = "MISC"
+            
+        parsed_result[entity_name] = [entity_label, []]
+        
+    store_entities_per_document(index, parsed_result, "extracted_entities_llm_gemini.json")
+            
+
+
+def parse_text_to_list(text):
+    """
+    Converts a formatted text string into a Python list of tuples.
+
+    Args:
+    text (str): The input text in the specified format, potentially including ```python markers.
+
+    Returns:
+    list: A list of tuples extracted from the text.
+    """
+    try:
+        # Remove ```python and ``` markers
+        cleaned_text = text.replace("```python", "").replace("```", "").strip()
+
+        # Use eval to parse the cleaned text
+        parsed_list = eval(cleaned_text)
+
+        # Ensure the result is a list of tuples
+        if isinstance(parsed_list, list) and all(isinstance(item, tuple) for item in parsed_list):
+            return parsed_list
+        else:
+            raise ValueError("The input text is not properly formatted as a list of tuples.")
+    except Exception as e:
+        raise ValueError(f"Error parsing the text: {e}")
+
+
+def extract_relationship_llm(index, document,genai):
+    model = genai.GenerativeModel("gemini-1.5-flash")
+    
+    # get togheter all the sentences in a single text
+    text = ""
+    for sentence in document:
+        text += " ".join(sentence) + " "
+
+    prompt = f"""
+        Extract all relationships from the following text, focusing only on the specified types of relationships. Each relationship should be represented as a tuple in the format (entity_name_1, type, entity_name_2), where:
+        - "entity_name_1" and "entity_name_2" are the names of the entities involved in the relationship.
+        - "type" is the type of relationship, and it must match one of the following labels:
+          {'inception', 'continent', 'located in the administrative territorial entity', 'conflict', 'place of birth', 'capital of', 'dissolved, abolished or demolished', 'country of origin', 'country', 'cast member', 'located in or next to body of water', 'performer', 'headquarters location', 'member of', 'publication date', 'date of birth', 'residence', 'has part', 'record label', 'contains administrative territorial entity', 'location', 'country of citizenship'}.
+
+        Return the results as a Python list of tuples. Do not include any explanations or additional text, only the list of tuples.
+
+        Example:
+        Text: "Barack Obama was born in Hawaii and served as the President of the United States."
+        Output: [("Barack Obama", "place of birth", "Hawaii")]
+
+        Now, analyze the following text:
+        Text: {text}
+        """
+
+    response = model.generate_content(prompt)
+    
+    #print(response.text)
+    
+    result = parse_text_to_list(response.text)
+    
+    parsed_result = []
+    
+    for item in result:
+        entity1, label, entity2 = item
+        parsed_result.append({
+            "head": entity1,
+            "type": label,
+            "tail": entity2
+        })
+    
+    store_relationships_per_document(index, parsed_result)
