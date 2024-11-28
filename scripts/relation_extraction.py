@@ -89,7 +89,7 @@ def extract_triplets(text):
 
 def store_triplets(index_document, triplets):
     # open the file extracted_relationship_big_with_rebel.json
-    with open("extracted_relationship_big_with_rebel.json", "r") as file:
+    with open("../results/extracted_relationship_big_with_rebel.json", "r") as file:
         data = json.load(file)
 
     """
@@ -123,7 +123,7 @@ def store_triplets(index_document, triplets):
     })
 
     # write the data to the file
-    with open("extracted_relationship_big_with_rebel.json", "w") as file:
+    with open("../results/extracted_relationship_big_with_rebel.json", "w") as file:
         json.dump(data, file)
 
 

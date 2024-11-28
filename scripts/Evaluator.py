@@ -2,7 +2,7 @@
 Author: francesco boldrin francesco.boldrin@studenti.unitn.it
 Date: 2024-11-13 11:19:54
 LastEditors: francesco boldrin francesco.boldrin@studenti.unitn.it
-LastEditTime: 2024-11-25 11:50:54
+LastEditTime: 2024-11-28 19:18:50
 FilePath: scripts/Evaluator.py
 Description: the file contains the functions to evaluate the algorithm developed, yet to decide how
 """
@@ -311,7 +311,7 @@ def extract_relations_from_gt(dataset, num_documents):
     return docs_list
 
 
-def evaluate(gt_file_path, extracted_file_path):
+def evaluate_ner(gt_file_path, extracted_file_path):
     """
         This function evaluates the performance of an entity extraction system by comparing the ground truth entities 
         with the extracted entities. It calculates two metrics:
@@ -522,9 +522,9 @@ def evaluate(gt_file_path, extracted_file_path):
     return confusion_df
                             
 
-results = evaluate('./dataset_Linked-DocRED/train_annotated.json', "./extracted_entities_llm_gemini.json")
-
-print(results)
+# results = evaluate('./dataset_Linked-DocRED/train_annotated.json', "./extracted_entities_llm_gemini.json")
+# 
+# print(results)
 
 def parse_relations_ex(ex, num_of_documents):
     """

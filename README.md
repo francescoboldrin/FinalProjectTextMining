@@ -32,15 +32,3 @@ The goal of this project is to recognize person, product, and company entities i
 - **CrossNER Dataset**  
   [GitHub: CrossNER Dataset](https://github.com/zliucr/CrossNER)
 
-## Roadmap
-
-1. **Data Collection**  
-   Collect datasets for training and testing the model.
-2. **Data Preprocessing**  
-   Preprocess the data to make it suitable for training.
-3. **Chose the Roadmap for the models to be used**  
-   Decide on the models to be used for entity recognition and link detection.
-4. **Model Training**  
-   Train the models on the training data.
-5. **Model Evaluation**
-6. **Model Testing**
