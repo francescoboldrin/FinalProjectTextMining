@@ -1,0 +1,1187 @@
+[
+    {
+        "doc_index": 0,
+        "relationships": [
+            {
+                "head": [
+                    "AirAsia Zest",
+                    "Asian Spirit",
+                    "Zest Air",
+                    "Zest Airways, Inc.",
+                    "Asian Spirit and Zest Air"
+                ],
+                "type": "headquarters location",
+                "tail": [
+                    "Pasay City"
+                ]
+            },
+            {
+                "head": [
+                    "AirAsia Zest",
+                    "Asian Spirit",
+                    "Zest Air",
+                    "Zest Airways, Inc.",
+                    "Asian Spirit and Zest Air"
+                ],
+                "type": "country",
+                "tail": [
+                    "Republic of the Philippines",
+                    "Philippines"
+                ]
+            },
+            {
+                "head": [
+                    "AirAsia Zest",
+                    "Asian Spirit",
+                    "Zest Air",
+                    "Zest Airways, Inc.",
+                    "Asian Spirit and Zest Air"
+                ],
+                "type": "country",
+                "tail": [
+                    "Republic of the Philippines",
+                    "Philippines"
+                ]
+            },
+            {
+                "head": [
+                    "Pasay City"
+                ],
+                "type": "country",
+                "tail": [
+                    "Republic of the Philippines",
+                    "Philippines"
+                ]
+            },
+            {
+                "head": [
+                    "Pasay City"
+                ],
+                "type": "located in the administrative territorial entity",
+                "tail": [
+                    "Metro Manila"
+                ]
+            },
+            {
+                "head": [
+                    "Republic of the Philippines",
+                    "Philippines"
+                ],
+                "type": "contains administrative territorial entity",
+                "tail": [
+                    "Metro Manila"
+                ]
+            },
+            {
+                "head": [
+                    "Manila"
+                ],
+                "type": "country",
+                "tail": [
+                    "Republic of the Philippines",
+                    "Philippines"
+                ]
+            },
+            {
+                "head": [
+                    "Metro Manila"
+                ],
+                "type": "contains administrative territorial entity",
+                "tail": [
+                    "Pasay City"
+                ]
+            },
+            {
+                "head": [
+                    "Metro Manila"
+                ],
+                "type": "located in the administrative territorial entity",
+                "tail": [
+                    "Republic of the Philippines",
+                    "Philippines"
+                ]
+            },
+            {
+                "head": [
+                    "Metro Manila"
+                ],
+                "type": "country",
+                "tail": [
+                    "Republic of the Philippines",
+                    "Philippines"
+                ]
+            },
+            {
+                "head": [
+                    "Ninoy Aquino International Airport"
+                ],
+                "type": "located in the administrative territorial entity",
+                "tail": [
+                    "Pasay City"
+                ]
+            },
+            {
+                "head": [
+                    "Ninoy Aquino International Airport"
+                ],
+                "type": "country",
+                "tail": [
+                    "Republic of the Philippines",
+                    "Philippines"
+                ]
+            },
+            {
+                "head": [
+                    "AirAsia Zest",
+                    "Asian Spirit",
+                    "Zest Air",
+                    "Zest Airways, Inc.",
+                    "Asian Spirit and Zest Air"
+                ],
+                "type": "country",
+                "tail": [
+                    "Republic of the Philippines",
+                    "Philippines"
+                ]
+            }
+        ]
+    },
+    {
+        "doc_index": 1,
+        "relationships": []
+    },
+    {
+        "doc_index": 2,
+        "relationships": [
+            {
+                "head": [
+                    "Stockholm"
+                ],
+                "type": "country",
+                "tail": [
+                    "Swedish",
+                    "Sweden"
+                ]
+            },
+            {
+                "head": [
+                    "Harpo"
+                ],
+                "type": "country of citizenship",
+                "tail": [
+                    "Swedish",
+                    "Sweden"
+                ]
+            },
+            {
+                "head": [
+                    "Bergqvist",
+                    "Niklas Bergqvist"
+                ],
+                "type": "date of birth",
+                "tail": [
+                    "6 October 1962"
+                ]
+            },
+            {
+                "head": [
+                    "Bergqvist",
+                    "Niklas Bergqvist"
+                ],
+                "type": "place of birth",
+                "tail": [
+                    "Stockholm"
+                ]
+            },
+            {
+                "head": [
+                    "Bergqvist",
+                    "Niklas Bergqvist"
+                ],
+                "type": "country of citizenship",
+                "tail": [
+                    "Swedish",
+                    "Sweden"
+                ]
+            }
+        ]
+    },
+    {
+        "doc_index": 3,
+        "relationships": [
+            {
+                "head": [
+                    "Queensland"
+                ],
+                "type": "located in the administrative territorial entity",
+                "tail": [
+                    "Australia",
+                    "Australian"
+                ]
+            },
+            {
+                "head": [
+                    "Queensland"
+                ],
+                "type": "country",
+                "tail": [
+                    "Australia",
+                    "Australian"
+                ]
+            },
+            {
+                "head": [
+                    "Queensland"
+                ],
+                "type": "contains administrative territorial entity",
+                "tail": [
+                    "Gold Coast"
+                ]
+            },
+            {
+                "head": [
+                    "Australia",
+                    "Australian"
+                ],
+                "type": "contains administrative territorial entity",
+                "tail": [
+                    "Queensland"
+                ]
+            },
+            {
+                "head": [
+                    "Event Cinemas"
+                ],
+                "type": "country",
+                "tail": [
+                    "Australia",
+                    "Australian"
+                ]
+            },
+            {
+                "head": [
+                    "Surfers Riverwalk"
+                ],
+                "type": "located in the administrative territorial entity",
+                "tail": [
+                    "Queensland"
+                ]
+            },
+            {
+                "head": [
+                    "Surfers Riverwalk"
+                ],
+                "type": "country",
+                "tail": [
+                    "Australia",
+                    "Australian"
+                ]
+            },
+            {
+                "head": [
+                    "Broadbeach Waters"
+                ],
+                "type": "located in the administrative territorial entity",
+                "tail": [
+                    "Queensland"
+                ]
+            },
+            {
+                "head": [
+                    "Broadbeach Waters"
+                ],
+                "type": "country",
+                "tail": [
+                    "Australia",
+                    "Australian"
+                ]
+            },
+            {
+                "head": [
+                    "Broadbeach Waters"
+                ],
+                "type": "located in the administrative territorial entity",
+                "tail": [
+                    "Gold Coast"
+                ]
+            },
+            {
+                "head": [
+                    "Gold Coast"
+                ],
+                "type": "located in the administrative territorial entity",
+                "tail": [
+                    "Queensland"
+                ]
+            },
+            {
+                "head": [
+                    "Gold Coast"
+                ],
+                "type": "country",
+                "tail": [
+                    "Australia",
+                    "Australian"
+                ]
+            },
+            {
+                "head": [
+                    "Toys ' R ' Us"
+                ],
+                "type": "country",
+                "tail": [
+                    "Australia",
+                    "Australian"
+                ]
+            },
+            {
+                "head": [
+                    "Myer"
+                ],
+                "type": "country",
+                "tail": [
+                    "Australia",
+                    "Australian"
+                ]
+            },
+            {
+                "head": [
+                    "Kmart"
+                ],
+                "type": "country",
+                "tail": [
+                    "Australia",
+                    "Australian"
+                ]
+            },
+            {
+                "head": [
+                    "Coles"
+                ],
+                "type": "country",
+                "tail": [
+                    "Australia",
+                    "Australian"
+                ]
+            },
+            {
+                "head": [
+                    "Daimaru"
+                ],
+                "type": "country",
+                "tail": [
+                    "Australia",
+                    "Australian"
+                ]
+            },
+            {
+                "head": [
+                    "Surfside Buslines"
+                ],
+                "type": "country",
+                "tail": [
+                    "Australia",
+                    "Australian"
+                ]
+            },
+            {
+                "head": [
+                    "Broadbeach South station"
+                ],
+                "type": "located in the administrative territorial entity",
+                "tail": [
+                    "Queensland"
+                ]
+            },
+            {
+                "head": [
+                    "Broadbeach South station"
+                ],
+                "type": "country",
+                "tail": [
+                    "Australia",
+                    "Australian"
+                ]
+            },
+            {
+                "head": [
+                    "Star Gold Coast"
+                ],
+                "type": "located in the administrative territorial entity",
+                "tail": [
+                    "Queensland"
+                ]
+            },
+            {
+                "head": [
+                    "Star Gold Coast"
+                ],
+                "type": "country",
+                "tail": [
+                    "Australia",
+                    "Australian"
+                ]
+            },
+            {
+                "head": [
+                    "Pacific Fair"
+                ],
+                "type": "located in the administrative territorial entity",
+                "tail": [
+                    "Queensland"
+                ]
+            },
+            {
+                "head": [
+                    "Pacific Fair"
+                ],
+                "type": "country",
+                "tail": [
+                    "Australia",
+                    "Australian"
+                ]
+            },
+            {
+                "head": [
+                    "Pacific Fair"
+                ],
+                "type": "inception",
+                "tail": [
+                    "1977"
+                ]
+            },
+            {
+                "head": [
+                    "Little Tallebudgera Creek"
+                ],
+                "type": "country",
+                "tail": [
+                    "Australia",
+                    "Australian"
+                ]
+            },
+            {
+                "head": [
+                    "Gold Coast Convention & Exhibition Centre"
+                ],
+                "type": "country",
+                "tail": [
+                    "Australia",
+                    "Australian"
+                ]
+            }
+        ]
+    },
+    {
+        "doc_index": 4,
+        "relationships": [
+            {
+                "head": [
+                    "Ministry of Home Security",
+                    "Ministry for Home Security",
+                    "Ministry"
+                ],
+                "type": "inception",
+                "tail": [
+                    "1939"
+                ]
+            },
+            {
+                "head": [
+                    "Ministry of Home Security",
+                    "Ministry for Home Security",
+                    "Ministry"
+                ],
+                "type": "dissolved, abolished or demolished",
+                "tail": [
+                    "May 1945"
+                ]
+            },
+            {
+                "head": [
+                    "John Anderson"
+                ],
+                "type": "conflict",
+                "tail": [
+                    "Second World War"
+                ]
+            },
+            {
+                "head": [
+                    "John Anderson"
+                ],
+                "type": "country of citizenship",
+                "tail": [
+                    "British"
+                ]
+            },
+            {
+                "head": [
+                    "Herbert Morrison"
+                ],
+                "type": "conflict",
+                "tail": [
+                    "Second World War"
+                ]
+            },
+            {
+                "head": [
+                    "Herbert Morrison"
+                ],
+                "type": "country of citizenship",
+                "tail": [
+                    "British"
+                ]
+            },
+            {
+                "head": [
+                    "British"
+                ],
+                "type": "continent",
+                "tail": [
+                    "Europe"
+                ]
+            },
+            {
+                "head": [
+                    "Neville Chamberlain"
+                ],
+                "type": "conflict",
+                "tail": [
+                    "Second World War"
+                ]
+            },
+            {
+                "head": [
+                    "Neville Chamberlain"
+                ],
+                "type": "country of citizenship",
+                "tail": [
+                    "British"
+                ]
+            },
+            {
+                "head": [
+                    "Home Office"
+                ],
+                "type": "country",
+                "tail": [
+                    "British"
+                ]
+            },
+            {
+                "head": [
+                    "Second World War"
+                ],
+                "type": "location",
+                "tail": [
+                    "Europe"
+                ]
+            }
+        ]
+    },
+    {
+        "doc_index": 5,
+        "relationships": [
+            {
+                "head": [
+                    "Western Australia"
+                ],
+                "type": "contains administrative territorial entity",
+                "tail": [
+                    "Shire of Mundaring"
+                ]
+            },
+            {
+                "head": [
+                    "Western Australia"
+                ],
+                "type": "contains administrative territorial entity",
+                "tail": [
+                    "Shire of Northam"
+                ]
+            },
+            {
+                "head": [
+                    "Shire of Mundaring"
+                ],
+                "type": "located in the administrative territorial entity",
+                "tail": [
+                    "Western Australia"
+                ]
+            },
+            {
+                "head": [
+                    "Perth"
+                ],
+                "type": "capital of",
+                "tail": [
+                    "Western Australia"
+                ]
+            },
+            {
+                "head": [
+                    "Perth"
+                ],
+                "type": "located in the administrative territorial entity",
+                "tail": [
+                    "Western Australia"
+                ]
+            },
+            {
+                "head": [
+                    "Great Southern Highway"
+                ],
+                "type": "located in the administrative territorial entity",
+                "tail": [
+                    "Western Australia"
+                ]
+            },
+            {
+                "head": [
+                    "Metropolitan Region Scheme"
+                ],
+                "type": "located in the administrative territorial entity",
+                "tail": [
+                    "Western Australia"
+                ]
+            },
+            {
+                "head": [
+                    "Perth Airport"
+                ],
+                "type": "located in the administrative territorial entity",
+                "tail": [
+                    "Western Australia"
+                ]
+            },
+            {
+                "head": [
+                    "Great Eastern Highway"
+                ],
+                "type": "located in the administrative territorial entity",
+                "tail": [
+                    "Western Australia"
+                ]
+            },
+            {
+                "head": [
+                    "Northam"
+                ],
+                "type": "located in the administrative territorial entity",
+                "tail": [
+                    "Western Australia"
+                ]
+            },
+            {
+                "head": [
+                    "Shire of Northam"
+                ],
+                "type": "located in the administrative territorial entity",
+                "tail": [
+                    "Western Australia"
+                ]
+            },
+            {
+                "head": [
+                    "Western Australia"
+                ],
+                "type": "contains administrative territorial entity",
+                "tail": [
+                    "Northam"
+                ]
+            }
+        ]
+    },
+    {
+        "doc_index": 6,
+        "relationships": [
+            {
+                "head": [
+                    "Mississippi River"
+                ],
+                "type": "located in the administrative territorial entity",
+                "tail": [
+                    "Illinois"
+                ]
+            },
+            {
+                "head": [
+                    "Mississippi River"
+                ],
+                "type": "country",
+                "tail": [
+                    "United States"
+                ]
+            },
+            {
+                "head": [
+                    "Madison County"
+                ],
+                "type": "located in the administrative territorial entity",
+                "tail": [
+                    "Illinois"
+                ]
+            },
+            {
+                "head": [
+                    "Madison County"
+                ],
+                "type": "country",
+                "tail": [
+                    "United States"
+                ]
+            },
+            {
+                "head": [
+                    "Illinois"
+                ],
+                "type": "located in or next to body of water",
+                "tail": [
+                    "Mississippi River"
+                ]
+            },
+            {
+                "head": [
+                    "Illinois"
+                ],
+                "type": "contains administrative territorial entity",
+                "tail": [
+                    "Madison County"
+                ]
+            },
+            {
+                "head": [
+                    "Illinois"
+                ],
+                "type": "located in the administrative territorial entity",
+                "tail": [
+                    "United States"
+                ]
+            },
+            {
+                "head": [
+                    "Illinois"
+                ],
+                "type": "country",
+                "tail": [
+                    "United States"
+                ]
+            },
+            {
+                "head": [
+                    "United States"
+                ],
+                "type": "contains administrative territorial entity",
+                "tail": [
+                    "Illinois"
+                ]
+            },
+            {
+                "head": [
+                    "United States"
+                ],
+                "type": "contains administrative territorial entity",
+                "tail": [
+                    "Missouri"
+                ]
+            },
+            {
+                "head": [
+                    "Missouri"
+                ],
+                "type": "located in the administrative territorial entity",
+                "tail": [
+                    "United States"
+                ]
+            },
+            {
+                "head": [
+                    "Missouri"
+                ],
+                "type": "country",
+                "tail": [
+                    "United States"
+                ]
+            },
+            {
+                "head": [
+                    "St. Louis",
+                    "Greater St. Louis"
+                ],
+                "type": "country",
+                "tail": [
+                    "United States"
+                ]
+            },
+            {
+                "head": [
+                    "American Civil War",
+                    "Civil War"
+                ],
+                "type": "country",
+                "tail": [
+                    "United States"
+                ]
+            },
+            {
+                "head": [
+                    "American Civil War",
+                    "Civil War"
+                ],
+                "type": "country of origin",
+                "tail": [
+                    "United States"
+                ]
+            },
+            {
+                "head": [
+                    "Miles Davis"
+                ],
+                "type": "country of citizenship",
+                "tail": [
+                    "United States"
+                ]
+            },
+            {
+                "head": [
+                    "Miles Davis"
+                ],
+                "type": "place of birth",
+                "tail": [
+                    "Alton"
+                ]
+            },
+            {
+                "head": [
+                    "Robert Wadlow"
+                ],
+                "type": "country of citizenship",
+                "tail": [
+                    "United States"
+                ]
+            },
+            {
+                "head": [
+                    "Robert Wadlow"
+                ],
+                "type": "place of birth",
+                "tail": [
+                    "Alton"
+                ]
+            },
+            {
+                "head": [
+                    "Robert Wadlow"
+                ],
+                "type": "residence",
+                "tail": [
+                    "Alton"
+                ]
+            },
+            {
+                "head": [
+                    "Metro - East"
+                ],
+                "type": "country",
+                "tail": [
+                    "United States"
+                ]
+            },
+            {
+                "head": [
+                    "Alton"
+                ],
+                "type": "located in the administrative territorial entity",
+                "tail": [
+                    "Madison County"
+                ]
+            },
+            {
+                "head": [
+                    "Alton"
+                ],
+                "type": "country",
+                "tail": [
+                    "United States"
+                ]
+            }
+        ]
+    },
+    {
+        "doc_index": 7,
+        "relationships": [
+            {
+                "head": [
+                    "Godflesh"
+                ],
+                "type": "record label",
+                "tail": [
+                    "Earache Records"
+                ]
+            },
+            {
+                "head": [
+                    "Godflesh"
+                ],
+                "type": "has part",
+                "tail": [
+                    "Justin Broadrick"
+                ]
+            },
+            {
+                "head": [
+                    "Justin Broadrick"
+                ],
+                "type": "member of",
+                "tail": [
+                    "Godflesh"
+                ]
+            },
+            {
+                "head": [
+                    "Justin Broadrick"
+                ],
+                "type": "record label",
+                "tail": [
+                    "Earache Records"
+                ]
+            },
+            {
+                "head": [
+                    "Us and Them"
+                ],
+                "type": "performer",
+                "tail": [
+                    "Godflesh"
+                ]
+            },
+            {
+                "head": [
+                    "Us and Them"
+                ],
+                "type": "record label",
+                "tail": [
+                    "Earache Records"
+                ]
+            },
+            {
+                "head": [
+                    "Us and Them"
+                ],
+                "type": "publication date",
+                "tail": [
+                    "8 June 1999"
+                ]
+            },
+            {
+                "head": [
+                    "Love and Hate in Dub"
+                ],
+                "type": "performer",
+                "tail": [
+                    "Godflesh"
+                ]
+            },
+            {
+                "head": [
+                    "Love and Hate in Dub"
+                ],
+                "type": "publication date",
+                "tail": [
+                    "1997"
+                ]
+            }
+        ]
+    },
+    {
+        "doc_index": 8,
+        "relationships": [
+            {
+                "head": [
+                    "Nicola Lake"
+                ],
+                "type": "located in the administrative territorial entity",
+                "tail": [
+                    "British Columbia"
+                ]
+            },
+            {
+                "head": [
+                    "Nicola Lake"
+                ],
+                "type": "country",
+                "tail": [
+                    "Canada"
+                ]
+            },
+            {
+                "head": [
+                    "South-Central Interior"
+                ],
+                "type": "located in the administrative territorial entity",
+                "tail": [
+                    "British Columbia"
+                ]
+            },
+            {
+                "head": [
+                    "South-Central Interior"
+                ],
+                "type": "country",
+                "tail": [
+                    "Canada"
+                ]
+            },
+            {
+                "head": [
+                    "British Columbia"
+                ],
+                "type": "contains administrative territorial entity",
+                "tail": [
+                    "South-Central Interior"
+                ]
+            },
+            {
+                "head": [
+                    "British Columbia"
+                ],
+                "type": "located in the administrative territorial entity",
+                "tail": [
+                    "Canada"
+                ]
+            },
+            {
+                "head": [
+                    "British Columbia"
+                ],
+                "type": "country",
+                "tail": [
+                    "Canada"
+                ]
+            },
+            {
+                "head": [
+                    "Canada"
+                ],
+                "type": "contains administrative territorial entity",
+                "tail": [
+                    "British Columbia"
+                ]
+            },
+            {
+                "head": [
+                    "Kamloops"
+                ],
+                "type": "country",
+                "tail": [
+                    "Canada"
+                ]
+            },
+            {
+                "head": [
+                    "Merritt"
+                ],
+                "type": "country",
+                "tail": [
+                    "Canada"
+                ]
+            },
+            {
+                "head": [
+                    "Nicola Lake Indian Reserve"
+                ],
+                "type": "country",
+                "tail": [
+                    "Canada"
+                ]
+            }
+        ]
+    },
+    {
+        "doc_index": 9,
+        "relationships": [
+            {
+                "head": [
+                    "Geirnaert",
+                    "Jonas",
+                    "Jonas Geirnaert"
+                ],
+                "type": "date of birth",
+                "tail": [
+                    "July 28, 1982"
+                ]
+            },
+            {
+                "head": [
+                    "Geirnaert",
+                    "Jonas",
+                    "Jonas Geirnaert"
+                ],
+                "type": "country of citizenship",
+                "tail": [
+                    "Belgium"
+                ]
+            },
+            {
+                "head": [
+                    "KASK"
+                ],
+                "type": "located in the administrative territorial entity",
+                "tail": [
+                    "Ghent"
+                ]
+            },
+            {
+                "head": [
+                    "Workers Party"
+                ],
+                "type": "country",
+                "tail": [
+                    "Belgium"
+                ]
+            },
+            {
+                "head": [
+                    "Flemish",
+                    "Flanders"
+                ],
+                "type": "located in the administrative territorial entity",
+                "tail": [
+                    "Belgium"
+                ]
+            },
+            {
+                "head": [
+                    "Flemish",
+                    "Flanders"
+                ],
+                "type": "country",
+                "tail": [
+                    "Belgium"
+                ]
+            },
+            {
+                "head": [
+                    "BASTA"
+                ],
+                "type": "cast member",
+                "tail": [
+                    "Geirnaert",
+                    "Jonas",
+                    "Jonas Geirnaert"
+                ]
+            },
+            {
+                "head": [
+                    "Belgium"
+                ],
+                "type": "contains administrative territorial entity",
+                "tail": [
+                    "Flemish",
+                    "Flanders"
+                ]
+            }
+        ]
+    }
+]

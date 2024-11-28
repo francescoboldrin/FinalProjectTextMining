@@ -1,0 +1,1285 @@
+[
+    {
+        "doc_index": 0,
+        "entities": {
+            "Zest Airways, Inc": [
+                "ORG",
+                [
+                    0
+                ]
+            ],
+            "AirAsia Zest": [
+                "ORG",
+                [
+                    0,
+                    6
+                ]
+            ],
+            "Asian Spirit": [
+                "ORG",
+                [
+                    0,
+                    4
+                ]
+            ],
+            "Zest Air": [
+                "ORG",
+                [
+                    0,
+                    5,
+                    6
+                ]
+            ],
+            "Ninoy Aquino International Airport": [
+                "LOC",
+                [
+                    0,
+                    3
+                ]
+            ],
+            "Pasay City": [
+                "LOC",
+                [
+                    0
+                ]
+            ],
+            "Metro Manila": [
+                "LOC",
+                [
+                    0
+                ]
+            ],
+            "Philippines": [
+                "LOC",
+                [
+                    0,
+                    4,
+                    5
+                ]
+            ],
+            "Manila": [
+                "LOC",
+                [
+                    1,
+                    3
+                ]
+            ],
+            "Cebu": [
+                "LOC",
+                [
+                    1
+                ]
+            ],
+            "Philippines AirAsia": [
+                "ORG",
+                [
+                    2
+                ]
+            ],
+            "Civil Aviation Authority of the Philippines": [
+                "ORG",
+                [
+                    5
+                ]
+            ],
+            "CAAP": [
+                "ORG",
+                [
+                    5
+                ]
+            ],
+            "Government of the": [
+                "ORG",
+                [
+                    5
+                ]
+            ],
+            "Republic of the": [
+                "LOC",
+                [
+                    5
+                ]
+            ],
+            "AirAsia": [
+                "ORG",
+                [
+                    6
+                ]
+            ],
+            "AirAsia Philippines": [
+                "ORG",
+                [
+                    7
+                ]
+            ]
+        }
+    },
+    {
+        "doc_index": 1,
+        "entities": {
+            "Del": [
+                "ORG",
+                [
+                    0
+                ]
+            ],
+            "D": [
+                "MISC",
+                [
+                    1
+                ]
+            ],
+            "cape": [
+                "LOC",
+                [
+                    1
+                ]
+            ],
+            "Indian Ocean": [
+                "LOC",
+                [
+                    1
+                ]
+            ],
+            "Atlantic": [
+                "LOC",
+                [
+                    2
+                ]
+            ],
+            "Pacific Ocean": [
+                "LOC",
+                [
+                    2
+                ]
+            ],
+            "Caribbean": [
+                "LOC",
+                [
+                    3
+                ]
+            ],
+            "Mediterranean Seas": [
+                "LOC",
+                [
+                    3
+                ]
+            ],
+            "Black Sea": [
+                "LOC",
+                [
+                    4
+                ]
+            ],
+            "Gulf of Mexico": [
+                "LOC",
+                [
+                    4
+                ]
+            ],
+            "Red Sea": [
+                "LOC",
+                [
+                    4
+                ]
+            ],
+            "Norwegian": [
+                "MISC",
+                [
+                    5
+                ]
+            ],
+            "Arctic": [
+                "LOC",
+                [
+                    6
+                ]
+            ]
+        }
+    },
+    {
+        "doc_index": 2,
+        "entities": {
+            "Niklas Bergqvist": [
+                "PER",
+                [
+                    0
+                ]
+            ],
+            "Stockholm": [
+                "LOC",
+                [
+                    0
+                ]
+            ],
+            "Swedish": [
+                "MISC",
+                [
+                    0,
+                    4
+                ]
+            ],
+            "Synthpop": [
+                "MISC",
+                [
+                    1
+                ]
+            ],
+            "Shanghai": [
+                "ORG",
+                [
+                    1
+                ]
+            ],
+            "Ballerina": [
+                "MISC",
+                [
+                    2
+                ]
+            ],
+            "Europe": [
+                "LOC",
+                [
+                    2
+                ]
+            ],
+            "Kee Marcello": [
+                "PER",
+                [
+                    2
+                ]
+            ],
+            "Sweden": [
+                "LOC",
+                [
+                    3
+                ]
+            ],
+            "Harpo": [
+                "PER",
+                [
+                    4
+                ]
+            ],
+            "Bergqvist": [
+                "PER",
+                [
+                    5
+                ]
+            ],
+            "Tracks of Sweden": [
+                "ORG",
+                [
+                    6
+                ]
+            ],
+            "Simon Johansson": [
+                "PER",
+                [
+                    6
+                ]
+            ]
+        }
+    },
+    {
+        "doc_index": 3,
+        "entities": {
+            "Pacific Fair": [
+                "ORG",
+                [
+                    0,
+                    3,
+                    10
+                ]
+            ],
+            "Broadbeach Waters": [
+                "LOC",
+                [
+                    0
+                ]
+            ],
+            "Gold Coast": [
+                "LOC",
+                [
+                    0,
+                    4,
+                    8
+                ]
+            ],
+            "Queensland": [
+                "LOC",
+                [
+                    0,
+                    1
+                ]
+            ],
+            "Australia": [
+                "LOC",
+                [
+                    0
+                ]
+            ],
+            "Pacific": [
+                "ORG",
+                [
+                    2,
+                    8
+                ]
+            ],
+            "Fair": [
+                "MISC",
+                [
+                    2,
+                    8
+                ]
+            ],
+            "Hooker Retail Developments": [
+                "ORG",
+                [
+                    2
+                ]
+            ],
+            "Myer": [
+                "ORG",
+                [
+                    5
+                ]
+            ],
+            "Kmart": [
+                "ORG",
+                [
+                    5
+                ]
+            ],
+            "Target": [
+                "ORG",
+                [
+                    5
+                ]
+            ],
+            "Coles": [
+                "ORG",
+                [
+                    5
+                ]
+            ],
+            "Toys ' R ' Us": [
+                "ORG",
+                [
+                    5
+                ]
+            ],
+            "Daimaru": [
+                "ORG",
+                [
+                    6
+                ]
+            ],
+            "Australian": [
+                "MISC",
+                [
+                    6
+                ]
+            ],
+            "Birch Carroll and Coyle": [
+                "ORG",
+                [
+                    7
+                ]
+            ],
+            "Event Cinemas": [
+                "ORG",
+                [
+                    7
+                ]
+            ],
+            "Surfside Buslines": [
+                "ORG",
+                [
+                    8
+                ]
+            ],
+            "Broadbeach South": [
+                "LOC",
+                [
+                    8
+                ]
+            ],
+            "Star Gold": [
+                "ORG",
+                [
+                    9
+                ]
+            ],
+            "Coast": [
+                "LOC",
+                [
+                    9
+                ]
+            ],
+            "Gold Coast Convention & Exhibition Centre": [
+                "LOC",
+                [
+                    9
+                ]
+            ],
+            "Little Tall": [
+                "LOC",
+                [
+                    10
+                ]
+            ],
+            "##eb": [
+                "MISC",
+                [
+                    10
+                ]
+            ],
+            "##udgera Creek": [
+                "LOC",
+                [
+                    10
+                ]
+            ],
+            "Surfers Riverwalk": [
+                "MISC",
+                [
+                    10
+                ]
+            ],
+            "The Mole": [
+                "MISC",
+                [
+                    11
+                ]
+            ]
+        }
+    },
+    {
+        "doc_index": 4,
+        "entities": {
+            "Ministry of Home Security": [
+                "ORG",
+                [
+                    0
+                ]
+            ],
+            "British": [
+                "MISC",
+                [
+                    0
+                ]
+            ],
+            "Second World War": [
+                "MISC",
+                [
+                    0
+                ]
+            ],
+            "Ministry for Home Security": [
+                "ORG",
+                [
+                    1
+                ]
+            ],
+            "John Anderson": [
+                "PER",
+                [
+                    1,
+                    6
+                ]
+            ],
+            "Home Security": [
+                "ORG",
+                [
+                    1
+                ]
+            ],
+            "Ministry": [
+                "ORG",
+                [
+                    2,
+                    4,
+                    7
+                ]
+            ],
+            "Women \u2019 s Voluntary Service": [
+                "ORG",
+                [
+                    2
+                ]
+            ],
+            "Home Office": [
+                "ORG",
+                [
+                    4
+                ]
+            ],
+            "Fire Guards": [
+                "ORG",
+                [
+                    5
+                ]
+            ],
+            "Herbert Morrison": [
+                "PER",
+                [
+                    6
+                ]
+            ],
+            "Neville Chamberlain": [
+                "PER",
+                [
+                    6
+                ]
+            ],
+            "Allied": [
+                "MISC",
+                [
+                    7
+                ]
+            ],
+            "Europe": [
+                "LOC",
+                [
+                    7
+                ]
+            ]
+        }
+    },
+    {
+        "doc_index": 5,
+        "entities": {
+            "The Lakes": [
+                "LOC",
+                [
+                    0,
+                    2
+                ]
+            ],
+            "Western Australia": [
+                "LOC",
+                [
+                    0
+                ]
+            ],
+            "Shire": [
+                "ORG",
+                [
+                    0
+                ]
+            ],
+            "of Munda": [
+                "LOC",
+                [
+                    0
+                ]
+            ],
+            "##ring": [
+                "ORG",
+                [
+                    0
+                ]
+            ],
+            "Perth": [
+                "LOC",
+                [
+                    1,
+                    6
+                ]
+            ],
+            "Great": [
+                "LOC",
+                [
+                    1,
+                    1
+                ]
+            ],
+            "Eastern": [
+                "ORG",
+                [
+                    1
+                ]
+            ],
+            "Highway": [
+                "LOC",
+                [
+                    1
+                ]
+            ],
+            "Southern Highway": [
+                "LOC",
+                [
+                    1
+                ]
+            ],
+            "Metropolitan": [
+                "ORG",
+                [
+                    1
+                ]
+            ],
+            "Region": [
+                "MISC",
+                [
+                    1
+                ]
+            ],
+            "Scheme": [
+                "ORG",
+                [
+                    1
+                ]
+            ],
+            "Shire of": [
+                "ORG",
+                [
+                    4
+                ]
+            ],
+            "North": [
+                "LOC",
+                [
+                    4
+                ]
+            ],
+            "##am": [
+                "ORG",
+                [
+                    4
+                ]
+            ],
+            "Woottating": [
+                "LOC",
+                [
+                    4
+                ]
+            ],
+            "Buckeridge Group of Companies": [
+                "ORG",
+                [
+                    5
+                ]
+            ],
+            "BGC": [
+                "ORG",
+                [
+                    5,
+                    6
+                ]
+            ],
+            "Great Eastern Highway": [
+                "LOC",
+                [
+                    6
+                ]
+            ],
+            "Perth Airport": [
+                "LOC",
+                [
+                    6
+                ]
+            ],
+            "Northam": [
+                "LOC",
+                [
+                    7
+                ]
+            ],
+            "York": [
+                "LOC",
+                [
+                    7
+                ]
+            ]
+        }
+    },
+    {
+        "doc_index": 6,
+        "entities": {
+            "Alton": [
+                "LOC",
+                [
+                    0,
+                    5
+                ]
+            ],
+            "Mississippi River": [
+                "LOC",
+                [
+                    0
+                ]
+            ],
+            "Madison County": [
+                "LOC",
+                [
+                    0
+                ]
+            ],
+            "Illinois": [
+                "LOC",
+                [
+                    0
+                ]
+            ],
+            "United States": [
+                "LOC",
+                [
+                    0
+                ]
+            ],
+            "St. Louis": [
+                "LOC",
+                [
+                    0
+                ]
+            ],
+            "Missouri": [
+                "LOC",
+                [
+                    0
+                ]
+            ],
+            "Metro - East": [
+                "LOC",
+                [
+                    2
+                ]
+            ],
+            "Greater St. Louis": [
+                "LOC",
+                [
+                    2
+                ]
+            ],
+            "American Civil War": [
+                "MISC",
+                [
+                    3
+                ]
+            ],
+            "Miles Davis": [
+                "PER",
+                [
+                    3
+                ]
+            ],
+            "Robert Wadlow": [
+                "PER",
+                [
+                    3
+                ]
+            ],
+            "Abraham Lincoln": [
+                "PER",
+                [
+                    4
+                ]
+            ],
+            "Stephen Douglas": [
+                "PER",
+                [
+                    4
+                ]
+            ],
+            "Civil War": [
+                "MISC",
+                [
+                    5
+                ]
+            ],
+            "Confederate": [
+                "MISC",
+                [
+                    5
+                ]
+            ]
+        }
+    },
+    {
+        "doc_index": 7,
+        "entities": {
+            "Us and Them": [
+                "MISC",
+                [
+                    0,
+                    2
+                ]
+            ],
+            "English": [
+                "MISC",
+                [
+                    0
+                ]
+            ],
+            "Godflesh": [
+                "ORG",
+                [
+                    0,
+                    2,
+                    3
+                ]
+            ],
+            "Earache Records": [
+                "ORG",
+                [
+                    1
+                ]
+            ],
+            "Europe": [
+                "LOC",
+                [
+                    1
+                ]
+            ],
+            "North America": [
+                "LOC",
+                [
+                    1
+                ]
+            ],
+            "Love and Hate in Dub": [
+                "MISC",
+                [
+                    2
+                ]
+            ],
+            "Us": [
+                "ORG",
+                [
+                    3,
+                    4
+                ]
+            ],
+            "Them": [
+                "ORG",
+                [
+                    3,
+                    4
+                ]
+            ],
+            "Justin Broadrick": [
+                "PER",
+                [
+                    3
+                ]
+            ]
+        }
+    },
+    {
+        "doc_index": 8,
+        "entities": {
+            "Nicola": [
+                "PER",
+                [
+                    0,
+                    2
+                ]
+            ],
+            "Lake": [
+                "LOC",
+                [
+                    0
+                ]
+            ],
+            "South": [
+                "LOC",
+                [
+                    0
+                ]
+            ],
+            "Central Interior": [
+                "LOC",
+                [
+                    0
+                ]
+            ],
+            "British Columbia": [
+                "LOC",
+                [
+                    0
+                ]
+            ],
+            "Canada": [
+                "LOC",
+                [
+                    0
+                ]
+            ],
+            "Merritt": [
+                "LOC",
+                [
+                    0
+                ]
+            ],
+            "Kamloops": [
+                "LOC",
+                [
+                    1
+                ]
+            ],
+            "Nicola River": [
+                "LOC",
+                [
+                    1
+                ]
+            ],
+            "Nicola Lake": [
+                "LOC",
+                [
+                    2
+                ]
+            ],
+            "Reserve No.": [
+                "MISC",
+                [
+                    2
+                ]
+            ],
+            "1": [
+                "LOC",
+                [
+                    3
+                ]
+            ],
+            "Upper Nicola": [
+                "LOC",
+                [
+                    3
+                ]
+            ],
+            "Indian Band": [
+                "ORG",
+                [
+                    3
+                ]
+            ],
+            "Douglas Lake Cattle Company": [
+                "ORG",
+                [
+                    4
+                ]
+            ],
+            "Douglas Lake Ranch": [
+                "ORG",
+                [
+                    4
+                ]
+            ]
+        }
+    },
+    {
+        "doc_index": 9,
+        "entities": {
+            "Jonas Geirnaert": [
+                "PER",
+                [
+                    0
+                ]
+            ],
+            "KASK": [
+                "ORG",
+                [
+                    0
+                ]
+            ],
+            "Ghent": [
+                "LOC",
+                [
+                    0
+                ]
+            ],
+            "Short Film Jury Prize": [
+                "MISC",
+                [
+                    1
+                ]
+            ],
+            "Cannes Film Festival": [
+                "MISC",
+                [
+                    1
+                ]
+            ],
+            "Flatlife": [
+                "MISC",
+                [
+                    1,
+                    4
+                ]
+            ],
+            "Jonas": [
+                "PER",
+                [
+                    4,
+                    5
+                ]
+            ],
+            "The All - American Alphabet": [
+                "MISC",
+                [
+                    4
+                ]
+            ],
+            "Cannes": [
+                "LOC",
+                [
+                    5
+                ]
+            ],
+            "Americans": [
+                "MISC",
+                [
+                    5
+                ]
+            ],
+            "Bush": [
+                "PER",
+                [
+                    5
+                ]
+            ],
+            "Workers Party of Belgium": [
+                "ORG",
+                [
+                    6
+                ]
+            ],
+            "Geirnaert": [
+                "PER",
+                [
+                    7
+                ]
+            ],
+            "Nevene": [
+                "MISC",
+                [
+                    7
+                ]
+            ],
+            "##ct": [
+                "ORG",
+                [
+                    7
+                ]
+            ],
+            "##en": [
+                "MISC",
+                [
+                    7
+                ]
+            ],
+            "Canvas": [
+                "ORG",
+                [
+                    7
+                ]
+            ],
+            "Flemish": [
+                "MISC",
+                [
+                    7
+                ]
+            ],
+            "Lieven Scheire": [
+                "PER",
+                [
+                    7
+                ]
+            ],
+            "Koen De Poorter": [
+                "PER",
+                [
+                    7
+                ]
+            ],
+            "Jelle De Beule": [
+                "PER",
+                [
+                    7
+                ]
+            ],
+            "BASTA": [
+                "ORG",
+                [
+                    8
+                ]
+            ],
+            "Flanders": [
+                "LOC",
+                [
+                    10
+                ]
+            ]
+        }
+    },
+    {
+        "doc_index": 10,
+        "entities": {
+            "Second": [
+                "MISC",
+                [
+                    0
+                ]
+            ],
+            "River": [
+                "LOC",
+                [
+                    0
+                ]
+            ],
+            "Watsessing River": [
+                "LOC",
+                [
+                    0
+                ]
+            ],
+            "New Jersey": [
+                "LOC",
+                [
+                    0
+                ]
+            ],
+            "United States": [
+                "LOC",
+                [
+                    0
+                ]
+            ],
+            "Passaic River": [
+                "LOC",
+                [
+                    0,
+                    6
+                ]
+            ],
+            "Newark Bay": [
+                "LOC",
+                [
+                    0,
+                    6
+                ]
+            ],
+            "West Orange": [
+                "LOC",
+                [
+                    1,
+                    2
+                ]
+            ],
+            "Passaic": [
+                "LOC",
+                [
+                    1
+                ]
+            ],
+            "Second River": [
+                "MISC",
+                [
+                    2,
+                    4,
+                    7
+                ]
+            ],
+            "Orange": [
+                "LOC",
+                [
+                    2
+                ]
+            ],
+            "East Orange": [
+                "LOC",
+                [
+                    2
+                ]
+            ],
+            "Wigwam": [
+                "PER",
+                [
+                    2
+                ]
+            ],
+            "Parrow": [
+                "PER",
+                [
+                    2
+                ]
+            ],
+            "Ni": [
+                "PER",
+                [
+                    2
+                ]
+            ],
+            "##shu": [
+                "ORG",
+                [
+                    2
+                ]
+            ],
+            "##ane Brooks": [
+                "PER",
+                [
+                    2
+                ]
+            ],
+            "Bloomfield": [
+                "LOC",
+                [
+                    2,
+                    4
+                ]
+            ],
+            "Watsessing Park": [
+                "LOC",
+                [
+                    3
+                ]
+            ],
+            "Toney": [
+                "PER",
+                [
+                    3
+                ]
+            ],
+            "' s": [
+                "LOC",
+                [
+                    3
+                ]
+            ],
+            "Brook": [
+                "ORG",
+                [
+                    3
+                ]
+            ],
+            "Belleville": [
+                "LOC",
+                [
+                    4,
+                    5,
+                    5
+                ]
+            ],
+            "Newark": [
+                "LOC",
+                [
+                    5
+                ]
+            ],
+            "Reformed Dutch": [
+                "ORG",
+                [
+                    8
+                ]
+            ],
+            "Church of Second River": [
+                "LOC",
+                [
+                    8
+                ]
+            ]
+        }
+    }
+]
