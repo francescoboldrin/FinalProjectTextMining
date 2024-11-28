@@ -66,6 +66,9 @@ def main():
         
         # Evaluate relationship extraction
         # evaluate_relationship_extraction(path_to_gt, path_to_extracted)
+
+        # VISUALIZATION
+        # call visualization function
         
     
 main()
