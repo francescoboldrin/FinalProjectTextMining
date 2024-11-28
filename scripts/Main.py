@@ -1,8 +1,4 @@
 """
-Author: francesco boldrin francesco.boldrin@studenti.unitn.it
-Date: 2024-11-13 11:04:33
-LastEditors: francesco boldrin francesco.boldrin@studenti.unitn.it
-LastEditTime: 2024-11-28 19:18:52
 FilePath: scripts/Main.py
 Description: main file, loading the function that answer the assignment. when run this is the only file to be executed
 """
