@@ -49,6 +49,58 @@ def loading_sentences(file_path: str) -> list:
 
 
 """
+For Flair fine-tuning, 
+they need .txt file, which formation is
+
+------
+name \t label \n
+name \t label \n
+name \t label \n
+\n (sentence distinguish)
+name \t label \n
+...
+------
+
+input : dev.json, test.json, or train_annotated.json
+output : X (just saving the proper txt file for fine-tuning)
+
+fine-tuning training is accomplished with "train_annotated.json" file,
+So we should not use "train_annotated.json" for entity extracting.
+We should test with "test.json" file.
+"""
+def making_finetuning_data(file_path: str, output_file: str):
+    linked_docred = read_linked_docred(file_path)
+
+    for document in linked_docred:
+        sents = document['sents']
+        entities = document['entities']
+
+        for sent_id, sent in enumerate(sents):
+            labels = ["O"] * len(sent)
+
+            for entity in entities:
+                for mention in entity['mentions']:
+                    if mention['sent_id'] == sent_id:
+                        start, end = mention['pos']
+                        entity_type = entity['type']
+
+                        # Apply BIO tagging ex. beginning word = B-ORG, inside word = I-ORG, else = O
+                        labels[start] = f"B-{entity_type}"
+                        for i in range(start + 1, end):
+                            labels[i] = f"I-{entity_type}"
+
+            for token, label in zip(sent, labels):
+                with open(output_file, "a", encoding="utf-8") as file:
+                    wt_str = token+"\t"+label+"\n"
+                    file.write(wt_str)
+            with open(output_file, "a", encoding="utf-8") as file:
+                file.write("\n")
+            
+
+    print(f"Fine-tuning dataset save to {output_file}")
+
+
+"""
 Store the list of the documents with json format
 Each documents is a list of sentences
 Each list contains the ground truth entities = {name:__, type:__}
